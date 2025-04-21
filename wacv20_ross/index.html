@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="One-shot 3D shape segmentation with robustness to noise and structural variation.">
+  <meta property="og:title" content="ROSS: Robust Learning of One-Shot 3D Shape Segmentation" />
+  <meta property="og:description" content="Global shape descriptor, part-aware descriptor, and shape morphing enable segmentation from just one labeled 3D mesh." />
+  <meta property="og:url" content="https://yourusername.github.io/ROSS" />
+  <meta property="og:image" content="static/images/ross_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="ROSS: Robust One-Shot 3D Shape Segmentation">
+  <meta name="twitter:description" content="Segment 3D shapes using only one labeled example.">
+  <meta name="twitter:image" content="static/images/ross_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D shape segmentation, one-shot learning, mesh analysis, shape morphing, deep learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ROSS</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">ROSS: Robust Learning of One-Shot 3D Shape Segmentation</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Shuaihang Yuan<sup>1</sup>, Yi Fang<sup>1*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYU Multimedia and Visual Computing Lab, New York University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>WACV 2020</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://openaccess.thecvf.com/content_WACV_2020/papers/Yuan_ROSS_Robust_Learning_of_One-shot_3D_Shape_Segmentation_WACV_2020_paper.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/wacv20_ross_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">The pipeline of proposed one-shot paradigm which segments 3D mesh by morphing and transferring label from
+transformed exemplar shape to target shape. The paradigm contains three key components: global shape descriptor generator,
+part-aware shape descriptor constructor and shape morphing with label transferring.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          3D shape segmentation is a fundamental computer vision task that partitions the object into labeled semantic
+parts. Recent approaches to 3D shape segmentation learning heavily rely on high-quality labeled training datasets.
+This limits their use in applications to handle the large scale
+unannotated datasets. In this paper, we proposed a novel
+semi-supervised approach, named Robust Learning of OneShot 3D Shape Segmentation (ROSS), which only requires
+one single exemplar labeled shape for training. The proposed ROSS can generalize its ability from a one-shot training process to predict the segmentation for previously unseen 3D shape models. The proposed ROSS is composed of
+three major modules for 3D shape segmentation as follows.
+The global shape descriptor generator is the first module
+that utilizes the proposed reference weighted convolution
+to learn a 3D shape descriptor. The second module is a
+part-aware shape descriptor constructor that can generate
+weighted descriptors from a learned 3D shape descriptor
+according to semantic parts without supervision. The shape
+morphing with label transferring works as the last module.
+It morphs the exemplar shape and then transfers labels from
+the transformed exemplar shape to the target shape. The
+extensive experimental results on 3D mesh datasets demonstrate the ROSS is robust to noise and incomplete shapes
+and it can be applied to unannotated datasets. The experiment shows the proposed ROSS can achieve comparable
+performance with the supervised method.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/wacv20_ross_fig2.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered"> Our one-shot paradigm for 3D mesh object part segmentation task. </h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/wacv20_ross_fig3.png" alt="Results PSB" width="900" />
+        <h4 class="subtitle has-text-centered"> Visualization of part segmentation task results on PSB benchmark dataset for airplane, ant and teddy bear. </h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/wacv20_ross_fig4.png" alt="Results SCAPE" width="900" />
+        <h4 class="subtitle has-text-centered">The visualization result of our proposed method. The shape configuration between the selected exemplar and the
+testing set can be significantly different.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/wacv20_ross_fig5.png" alt="Results Incomplete" width="900" />
+        <h4 class="subtitle has-text-centered">Visualization of part segmentation task result on
+SCAPE benchmark dataset for complete human meshes.
+The first row is the prediction result of our model and the
+second row represents the ground truth.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{yuan2020ross,
+          title={Ross: Robust learning of one-shot 3d shape segmentation},
+          author={Yuan, Shuaihang and Fang, Yi},
+          booktitle={proceedings of the IEEE/CVF winter conference on applications of computer vision},
+          pages={1961--1969},
+          year={2020}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

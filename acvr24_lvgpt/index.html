@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A light and smart wearable platform with a multimodal foundation model to enhance spatial reasoning for people with blindness and low vision.">
+  <meta property="og:title" content="LV-GPT: Smart Wearable for Enhanced Spatial Reasoning" />
+  <meta property="og:description" content="A lightweight wearable system and fine-tuned multimodal foundation model for spatial reasoning in assistive tech for visually impaired users." />
+  <meta property="og:url" content="https://haoyu6427.github.io/LV-GPT" />
+  <meta property="og:image" content="static/images/lvgpt_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="LV-GPT: Smart Wearable for Enhanced Spatial Reasoning">
+  <meta name="twitter:description" content="Light, smart wearable system using spatially enhanced multimodal language model for pBLV.">
+  <meta name="twitter:image" content="static/images/lvgpt_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="assistive technology, low vision, multimodal model, spatial reasoning, wearable AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LV-GPT</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">A Light and Smart Wearable Platform with Multimodal Foundation Model for Enhanced Spatial Reasoning in People with Blindness and Low Vision</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Alexey Magay, Dhurba Tripathi, Yu Hao, Yi Fang<sup>*</sup>
+          </span>
+          <br>
+          <span class="author-block">
+            Embodied AI and Robotics (AIR) Lab, New York University Abu Dhabi, UAE
+          </span>
+          <br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ACVR 2024</b></span>
+        </div>
+
+<!--         <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://arxiv.org/pdf/2406.18361.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/fig0.1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">The lightweight camera mounts on glasses, while the fine-tuned MLLM provides spatially aware feedback to users.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          People with blindness and low vision (pBLV) face significant challenges, struggling to navigate environments and locate objects due to limited visual cues. Spatial reasoning is crucial for these individuals, as it enables them to understand and interpret the spatial relationships in their surroundings, enhancing their ability to navigate and interact more safely and independently. Current multi-modal large language (MLLM) models  for low vision people lack the spatial reasoning capabilities needed to effectively assist in these tasks. Moreover, there is a notable absence of lightweight, easy-to-use systems that allow pBLV to effectively perceive and interact with their surrounding environment. In this paper, we propose a novel spatial enhanced multi-modal large language model based approach for visually impaired individuals. By fine-tuning the MLLM to incorporate spatial reasoning capabilities, our method significantly improves the understanding of environmental context, which is critical for navigation and object recognition. The innovation extends to a hardware component, designed as an attachment for glasses, ensuring increased accessibility and ease of use. This integration leverages advanced VLMs to interpret visual data and provide real-time, spatially aware feedback to the user. Our approach aims to bridge the gap between advanced machine learning models and practical, user-friendly assistive devices, offering a robust solution for visually impaired users to navigate their surroundings more effectively and independently. The paper includes an in-depth evaluation using the VizWiz dataset, demonstrating substantial improvements in accuracy and user experience. Additionally, we design a comprehensive dataset to evaluate our method's effectiveness in real-world situations, demonstrating substantial improvements in accuracy and user experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">System Pipeline</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/fig1.1.png" alt="Pipeline" width="900" />
+        <h4 class="subtitle has-text-centered">System flow with wearable camera, question input, and LLaVA-based answer generation for spatially grounded interaction.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/fig4.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">LVSQA dataset examples: spatial navigation, distance estimation, and relationships.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/fig4.1.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">App interface supporting audio and text queries, and fine-tuned model responses.</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{magay2024lv,
+          title={A Light and Smart Wearable Platform with Multimodal Foundation Model for Enhanced Spatial Reasoning in People with Blindness and Low Vision},
+          author={Magay, Alexey and Tripathi, Dhurba and Hao, Yu and Fang, Yi},
+          booktitle={International Workshop on Assistive Computer Vision and Robotics (ACVR)},
+          year={2024},
+          organization={ECCV}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

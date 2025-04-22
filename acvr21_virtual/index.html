@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Computer Vision Augmented Touch-Free Scene Exploration for the Blind or Visually Impaired">
+  <meta property="og:title" content="Virtual Touch: Touch-Free Scene Exploration for the BVI" />
+  <meta property="og:description" content="A vision-to-audio system enabling intuitive and safe exploration for blind or visually impaired users through real-time fingertip-guided object detection." />
+  <meta property="og:url" content="https://haoyu6427.github.io/project_pages/acvr21_virtual/" />
+  <meta property="og:image" content="static/images/acvr21_virtual_fig1.png" />
+
+  <meta name="twitter:title" content="Virtual Touch for the Blind or Visually Impaired">
+  <meta name="twitter:description" content="Computer Vision-based touch-free object detection and scene exploration for the BVI.">
+  <meta name="twitter:image" content="static/images/acvr21_virtual_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="virtual touch, assistive tech, blind navigation, computer vision, BVI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Virtual Touch - ACVR 2021</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Virtual Touch: Computer Vision Augmented Touch-Free Scene Exploration for the Blind or Visually Impaired</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Xixuan Julie Liu<sup>1</sup>, Yi Fang<sup>1*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYU Abu Dhabi
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICCVW 2021</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://openaccess.thecvf.com/content/ICCV2021W/ACVR/papers/Liu_Virtual_Touch_Computer_Vision_Augmented_Touch-Free_Scene_Exploration_for_the_ICCVW_2021_paper.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr21_virtual_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Exploration challenges faced by BVI individuals during the pandemic (left), and our Virtual Touch solution enabling safe scene exploration via touch-free interaction (right).</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          The Blind or Visually Impaired (BVI) individuals use
+haptics much more frequently than the healthy-sighted in
+their everyday lives to locate objects and acquire object details. This consequently puts them at higher risk of contracting the virus through close contact during a pandemic crisis (e.g. COVID-19). Traditional canes only give the BVIs
+limited perceptive range. Our project develops a wearable
+solution named Virtual Touch to augment the BVI’s perceptive power so they can perceive objects near and far
+in their surrounding environment in a touch-free manner
+and consequently carry out activities of daily living during pandemics more intuitively, safely, and independently.
+The Virtual Touch feature contains a camera with a novel
+point-based neural network TouchNet tailored for real-time
+blind-centered object detection, and a headphone telling the
+BVI the semantic labels. Through finger pointing, the BVI
+end user indicates where he or she is paying attention to relative to their egocentric coordinate system, based on which
+we build attention-driven spatial intelligence.
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Methods</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr21_virtual_fig4.png" alt="System Flow" width="850" />
+        <h4 class="subtitle has-text-centered">Closed-loop dataflow of the Virtual Touch system combining fingertip detection and object recognition to enable vision-to-audio scene translation.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr21_virtual_fig6.png" alt="Network Architecture" width="850" />
+        <h4 class="subtitle has-text-centered">Performance comparison of different confidence thresholds for our TouchNet320 point-based detection network.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr21_virtual_fig2.png" alt="Assistive Tech Comparison" width="850" />
+        <h4 class="subtitle has-text-centered">Existing assistive technologies are either limited in function or cumbersome to wear. Virtual Touch offers a lightweight, efficient, and intuitive alternative.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr21_virtual_fig3.png" alt="Real-world Demo" width="850" />
+        <h4 class="subtitle has-text-centered">Virtual Touch enables intuitive object detection through user attention, improving BVI navigation and awareness.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr21_virtual_fig7.png" alt="Outdoor Detection" width="850" />
+        <h4 class="subtitle has-text-centered">Successful real-world detection examples in outdoor environments using fingertip-guided point-based detection.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{liu2021virtual,
+          title={Virtual touch: computer vision augmented touch-free scene exploration for the blind or visually impaired},
+          author={Liu, Xixuan Julie and Fang, Yi},
+          booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+          pages={1708--1717},
+          year={2021}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

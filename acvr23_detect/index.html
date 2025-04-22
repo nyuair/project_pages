@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Detect and Approach: Close-Range Navigation Support for People with Blindness and Low Vision">
+  <meta property="og:title" content="Detect and Approach: Close-Range Navigation Support for People with Blindness and Low Vision" />
+  <meta property="og:description" content="A novel wearable system for object-level navigation assistance for people with blindness and low vision, using monocular vision only." />
+  <meta property="og:url" content="https://haoyu6427.github.io/detect-and-approach" />
+  <meta property="og:image" content="static/images/detect_approach_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Detect and Approach: Navigation Aid for pBLV">
+  <meta name="twitter:description" content="A monocular vision-based navigation system for assisting blind and low vision users to locate and approach objects.">
+  <meta name="twitter:image" content="static/images/detect_approach_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="assistive technology, navigation, monocular vision, visual SLAM, object localization, trajectory estimation, pBLV">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Detect and Approach</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Detect and Approach: Close-Range Navigation Support for People with Blindness and Low Vision</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Yu Hao<sup>1,2</sup>, Junchi Feng<sup>2</sup>, John-Ross Rizzo<sup>2,4</sup>, Yao Wang<sup>2</sup>, Yi Fang<sup>1,2,3*</sup>
+          </span>
+          <br>
+          <span class="author-block">
+            <sup>1</sup>NYU Multimedia and Visual Computing Lab<br>
+            <sup>2</sup>NYU Tandon School of Engineering<br>
+            <sup>3</sup>NYU Abu Dhabi<br>
+            <sup>4</sup>NYU Langone Health
+          </span>
+          <br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ACVR 2022</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://arxiv.org/pdf/2208.08477" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr_fig1_4.png" alt="Overview" width="700" />
+        <h4 class="subtitle has-text-centered">Our system is able to detect and locate an object of interest and guide a  person with BLV to  the target object. Initially, an object detection module will detect all possible interesting objects. Once the person selects a target object of interest, the object localization module will provide the 3D location of the object  and plan the path for the person to reach the object. The trajectory estimation module will then continuously estimate the person's movement between two time points, update the object location (relative to the user), and send path correction feedback to the user when necessary.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          People with blindness and low vision (pBLV) experience significant challenges when locating final destinations or targeting specific objects in unfamiliar environments. Furthermore, besides initially locating and orienting oneself to a target object, approaching the final target from one's present position  is often frustrating and challenging, especially when one drifts away from the initial planned path to avoid obstacles. In this paper, we develop a novel  wearable navigation solution to provide real-time guidance for a user to approach a target object of interest efficiently and effectively in unfamiliar environments.  Our system contains two key visual computing  functions: initial target object localization in 3D and continuous estimation of the user's trajectory, both based on the  2D video captured by a low-cost monocular camera mounted on in front of the chest  of the user.  These functions enable the system to suggest an initial navigation path, continuously update the path as the user moves, and offer timely recommendation about the correction of the user's path. Our experiments demonstrate that our system is able to operate with an error of less than 0.5 meter both outdoor and indoor. The system is entirely vision-based and does not need other sensors for navigation, and the computation can be run  with the Jetson processor in the wearable system to facilitate real-time navigation assistance.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr_fig3_4.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">The processing flow for the  target object localization module (top) and trajectory estimation module (bottom). </h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr_exp1.png" alt="KITTI Results" width="900" />
+        <h4 class="subtitle has-text-centered">Example results of object detection for the KITTI dataset. Yellow rectangles denote the bounding box of the detected objects. We also show the estimated location (X,Z) of the detected objects.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/acvr_exp3.png" alt="Indoor Results" width="900" />
+        <h4 class="subtitle has-text-centered">Examples of target object detection for our dataset. Yellow rectangles denote the bounding boxes of the detected objects (e.g., chair, laptop).</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{hao2022detect,
+          title={Detect and approach: Close-range navigation support for people with blindness and low vision},
+          author={Hao, Yu and Feng, Junchi and Rizzo, John-Ross and Wang, Yao and Fang, Yi},
+          booktitle={European Conference on Computer Vision},
+          pages={607--622},
+          year={2022},
+          organization={Springer}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A neural method for non-rigid multiple point set registration using latent Gaussian mixture alignment.">
+  <meta property="og:title" content="Non-Rigid Multiple Point Set Registration Using Latent Gaussian Mixture" />
+  <meta property="og:description" content="Deep group-wise registration via latent GMMs and diffeomorphic transformations using Rényi divergence or L2 distance." />
+  <meta property="og:url" content="https://yourwebsite.edu/nonrigid-multi-gmm" />
+  <meta property="og:image" content="static/images/icip22_non_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Latent GMM Registration for Multi Point Sets">
+  <meta name="twitter:description" content="Group-wise non-rigid registration using GMMs with Jensen-Rényi divergence or L2 distance.">
+  <meta name="twitter:image" content="static/images/icip22_non_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="point cloud registration, non-rigid transformation, GMM, Jensen-Rényi divergence, L2 distance, deep learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Non-Rigid Multi-Point Set Registration</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Non-Rigid Multiple Point Set Registration Using Latent Gaussian Mixture</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Hao Huang, Cheng Chen, Yi Fang<sup>*</sup>
+          </span><br>
+          <span class="author-block">
+            NYU Multimedia and Visual Computing Lab<br>
+            New York University, New York, USA<br>
+            New York University Abu Dhabi, Abu Dhabi, UAE
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICIP 2022</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9897166" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icip22_non_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Weight-sharing PointNet++ backbone learns multi-scale diffeomorphic transformations and GMM correspondence for non-rigid registration.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+    <div class="content has-text-centered">
+      <p>
+        Point set registration is a fundamental task in 3D computer
+ vision. Existing registration approaches mainly focus on either
+ pair-wise or rigid registration. In this paper, we propose a ro
+bust group-wise registration method from a probabilistic view
+ and adopt non-rigid transformations to register multiple point
+ sets without bias toward any given set. The proposed method
+ lessens the need of point correspondences by representing each
+ point set as Gaussian Mixture Model and the registration is
+ equivalent to multiple distributions alignment. Closed-form
+ of Jensen-Rényi divergence and L2 distance are used as cost
+ functions. We further design a neural network to extract cor
+respondences between raw point sets and Gaussian Mixture
+ Model (GMM) parameters, and recover the optimal diffeo
+morphic non-rigid transformations from the matched GMM
+ parameters. The proposed method is compared against two
+ well-known probabilistic methods for group-wise point-set
+ registration on several public 2D and 3D datasets. The results
+ demonstrate that our method improves registration accuracy.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Results Section -->
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icip22_non_fig2.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Evaluation of 2D group-wise registration at three deformation levels using KS-statistic and Chamfer Distance (C.D.).</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icip22_non_fig3.png" alt="Results 2" width="700" />
+        <h4 class="subtitle has-text-centered">Rresults of 3D human registration using various methods including IP, Norm-IP, and our proposed model.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icip22_non_fig4.png" alt="Results 3" width="700" />
+        <h4 class="subtitle has-text-centered">Comparison of 2D fish registration across methods including Holder, IP, Norm-IP, and our approach.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{huang2022non,
+          title={Non-Rigid Multiple Point Set Registration Using Latent Gaussian Mixture},
+          author={Huang, Hao and Chen, Cheng and Fang, Yi},
+          booktitle={2022 IEEE International Conference on Image Processing (ICIP)},
+          pages={3181--3185},
+          year={2022},
+          organization={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

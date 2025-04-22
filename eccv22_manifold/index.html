@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A manifold-based adversarial learning method to generalize 3D shape representation across domains.">
+  <meta property="og:title" content="Manifold Adversarial Learning for Cross-domain 3D Shape Representation" />
+  <meta property="og:description" content="Introducing a unified transformation manifold and adaptive memory to bridge 3D domain gaps." />
+  <meta property="og:url" content="https://yourusername.github.io/manifold3d" />
+  <meta property="og:image" content="static/images/eccv22_manifold_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Manifold Adversarial Learning for 3D Domain Generalization">
+  <meta name="twitter:description" content="Manifold-based framework to improve 3D shape representation generalization.">
+  <meta name="twitter:image" content="static/images/eccv22_manifold_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D point cloud, domain generalization, adversarial learning, manifold, deep learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Manifold Adversarial Learning</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Manifold Adversarial Learning for Cross-domain 3D Shape Representation</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Hao Huang<sup>1,2,3,4</sup>, Cheng Chen<sup>1,3,4</sup>, Yi Fang<sup>1,2,3,4*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYU Multimedia and Visual Computing Lab<br> 
+            <sup>2</sup>NYUAD Center for Artificial Intelligence and Robotics
+            <sup>3</sup>NYU Tandon School of Engineering<br> 
+            <sup>4</sup>New York University Abu Dhabi
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ECCV 2022</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136860266.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/eccv22_manifold_fig1.png" alt="Overview" width="500" />
+        <h4 class="subtitle has-text-centered">Three intermediate domains consist of adversarial samples transformed from source point clouds. Distances to source and target domains are shown as d1 and d2.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+         Onavariety of 3Dvision tasks, deep neural networks (DNNs)
+ for point clouds have outperformed the conventional non-learning-based
+ methods. However, generalization to out-of-distribution 3D point clouds
+ remains challenging for DNNs. As annotating large-scale point clouds
+ is prohibitively expensive or even impossible, strategies for generaliz
+ing DNN models to unseen domains of point clouds without access to
+ those domains during training are urgently needed but have yet to be
+ substantially investigated. In this paper, we design an adversarial learn
+ing scheme to learn point cloud representation on a seen source domain
+ and then generalize the learned knowledge to an unseen target domain.
+ Specifically, we unify several geometric transformations into a manifold
+based framework under which a distance between transformations is well
+defined. Measured by the distance, adversarial samples are mined to form
+ intermediate domains and retained in an adaptive replay-based memory.
+ We further provide theoretical justification for the intermediate domains
+ to reduce the generalization error of the DNN models. Experimental re
+sults on synthetic-to-real datasets illustrate that our method outperforms
+ existing 3D deep learning models for domain generalization.
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/eccv22_manifold_fig2.png" alt="Manifold-based Learning" width="500" />
+        <h4 class="subtitle has-text-centered">Point clouds from the source domain are transformed adversarially on a manifold and retained in memory for intermediate domains.</h4>
+      </div>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/eccv22_manifold_fig3.png" alt="Transformation Representation" width="700" />
+        <h4 class="subtitle has-text-centered">Unification of all transformations using a direct product of SO(3) and R.</h4>
+      </div>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/eccv22_manifold_fig4.png" alt="Gradient Retraction" width="500" />
+        <h4 class="subtitle has-text-centered">Projecting gradients to tangent space and retracting to the point cloud appearance manifold (PCAM).</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/eccv22_manifold_fig5.png" alt="Qualitative Results" width="900" />
+        <h4 class="subtitle has-text-centered">Adversarial samples bridge the gap between synthetic and real point clouds through non-uniform density, self-occlusion, and dropping transformations.</h4>
+      </div>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/eccv22_manifold_fig6.png" alt="Quantitative Results Table" width="900" />
+        <h4 class="subtitle has-text-centered">Accuracy comparison across various methods. Our approach achieves the best performance with both PointNet and DGCNN backbones.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTex -->
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{huang2022manifold,
+          title={Manifold adversarial learning for cross-domain 3d shape representation},
+          author={Huang, Hao and Chen, Cheng and Fang, Yi},
+          booktitle={European Conference on Computer Vision},
+          pages={272--289},
+          year={2022},
+          organization={Springer}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

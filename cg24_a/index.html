@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wavelet-based generative model for 3D shape synthesis from a single example.">
+  <meta property="og:title" content="Wavelet-Based Single 3D Shape Generation" />
+  <meta property="og:description" content="A wavelet-enhanced deep generative model to synthesize diverse 3D shapes from a single example." />
+  <meta property="og:url" content="https://yourusername.github.io/single3d-wavelet" />
+  <meta property="og:image" content="static/images/single3d_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Wavelet-Based Single 3D Shape Generation">
+  <meta name="twitter:description" content="Wavelet-enhanced generative modeling for diverse 3D shapes from one sample.">
+  <meta name="twitter:image" content="static/images/single3d_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D shape generation, GAN, wavelet transform, single sample, tri-plane features">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Wavelet-Single3D</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">A Single 3D Shape Wavelet-Based Generative Model</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Hao Huang<sup>1,2*</sup>, Shuaihang Yuan<sup>1,2*</sup>, Zheng Peng<sup>2</sup>, Yu Hao<sup>1,2</sup>, Congcong Wen<sup>2†</sup>, Yi Fang<sup>1,2</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>Center for AI and Robotics, NYU Abu Dhabi <br>
+            <sup>2</sup> Multimedia and Visual Computing Lab, NYU Tandon
+          </span><br>
+          <small><sup>*</sup>Equal contribution, <sup>†</sup>Corresponding author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>Computers & Graphics, 2024</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0097849324000189?via%3Dihub" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cg24_a_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Our model architecture: a pyramid of wavelet-based generators trained progressively from coarse to fine scales.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          3D shape generation, vital in fields including computer graphics, industrial design, and robotics, has seen a significant growth due to deep learning advancements. Nevertheless, a prevailing challenge in this area lies in its heavy reliance on extensive data for training. Consequently, the ability to generate 3D shapes with a limited quantity of training samples emerges as a desirable objective. The aim of this research is to design deep generative models capable of learning from a single reference 3D shape, thereby eliminating the requirement for sizeable datasets. Drawing inspiration from contemporary Generative Adversarial Networks (GANs) that operate on individual 3D shapes in a coarse-to-fine manner hierarchically, we propose a novel wavelet-based framework for single 3D shape generation, which preserves the global shape structure whilst inducing local variability. Our key observation is that, through wavelet decomposition, the low-frequency components of two inputs, where one input is a corrupted version of the other, are very similar. This similarity enables reconstruction of the uncorrupted input by leveraging the low-frequency components of the corrupted version. This observation motivates us to propose the wavelet decomposition of the 2D tri-plane feature maps of a given 3D shape, followed by the synthesis of new tri-plane feature maps for shape generation. To the best of our knowledge, this work represents the first endeavor to incorporate wavelet analysis into a deep generative model for the purpose of generating novel 3D shapes with a single example. Furthermore, we adapt data augmentation and Coulomb adversarial generative loss to facilitate training and generation procedures. We demonstrate the effectiveness of our approach by generating diverse 3D shapes and conducting quantitative comparisons with established baseline methods.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cg24_a_fig2.png" alt="Wavelet Method" width="900" />
+        <h4 class="subtitle has-text-centered">Wavelet-based tri-plane feature generation using low-frequency preservation and high-frequency prediction.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cg24_a_fig3.png" alt="Wavelet Method" width="900" />
+        <h4 class="subtitle has-text-centered"> We forward each feature map of a tri-plane features (green as an illustration) to our Wavelet Transform Generator in which a Discrete Wavelet Transform
+ is applied to decompose the feature map into a low-frequency components and a series of high-frequency components.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cg24_a_fig4.png" alt="Wavelet Method" width="600" />
+        <h4 class="subtitle has-text-centered"> Data augmentation Coulomb Discriminator architecture.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cg24_a_fig5.png" alt="Results1" width="900" />
+        <h4 class="subtitle has-text-centered">We evaluate the performance of each method using three metrics, and the final column reports the average score across ten reference shapes.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cg24_a_fig6.png" alt="Results2" width="900" />
+        <h4 class="subtitle has-text-centered"> Visualization of the generated shapes of six categories and among each category the golden one is the ground-truth reference shape.</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{huang2024single3d,
+          title={A Single 3D Shape Wavelet-Based Generative Model},
+          author={Huang, Hao and Yuan, Shuaihang and Peng, Zheng and Hao, Yu and Wen, Congcong and Fang, Yi},
+          journal={Computers \& Graphics},
+          volume={119},
+          pages={103891},
+          year={2024},
+          publisher={Elsevier},
+          doi={10.1016/j.cag.2024.103891}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

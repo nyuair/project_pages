@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="AWT-Net uses multi-scale wavelet decomposition and Transformer fusion for effective 3D shape representation learning.">
+  <meta property="og:title" content="Adaptive Wavelet Transformer Network for 3D Shape Representation Learning" />
+  <meta property="og:description" content="AWT-Net performs multi-resolution point cloud decomposition with adaptive wavelet transform and integrates information using Transformer blocks." />
+  <meta property="og:url" content="https://yourusername.github.io/AWT-Net" />
+  <meta property="og:image" content="static/images/iclr22_adaptive_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Adaptive Wavelet Transformer Network for 3D Shape Representation Learning">
+  <meta name="twitter:description" content="Wavelet-based multiscale Transformer architecture for 3D point cloud classification and segmentation.">
+  <meta name="twitter:image" content="static/images/iclr22_adaptive_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D point cloud, wavelet, transformer, multiscale, segmentation, classification">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AWT-Net: Adaptive Wavelet Transformer Network</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Adaptive Wavelet Transformer Network for 3D Shape Representation Learning</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Hao Huang<sup>1</sup>, Yi Fang<sup>1*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>New York University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICLR 2021</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://openreview.net/pdf?id=5MLb3cLCJY" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iclr22_adaptive_fig1.png" alt="Figure 1" width="700">
+        <h4 class="subtitle has-text-centered">Figure 1: Visualization of wavelet detail components in 3D point clouds. High-frequency regions like edges are color-coded towards red.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          We present a novel method for 3D shape representation learning using multi-scale
+ wavelet decomposition. Previous works often decompose 3D shapes into comple
+mentary components in spatial domain at a single scale. In this work, we study to
+ decompose3Dshapesintosub-bandscomponentsinfrequencydomainatmultiple
+ scales, resulting in a hierarchical decomposition tree in a principled manner rooted
+ in multi-resolution wavelet analysis. Specifically, we propose Adaptive Wavelet
+ Transformer Network (AWT-Net) that firstly generates approximation or detail
+ wavelet coefficients per point, classifying each point into high or low sub-bands
+ components, using lifting scheme at multiple scales recursively and hierarchically.
+ Then, AWT-Net exploits Transformer to enhance the original shape features by
+ querying and fusing features from different but integrated sub-bands. The wavelet
+ coefficients can be learned without direct supervision on coefficients, and AWT
+Net is fully differentiable and can be learned in an end-to-end fashion. Extensive
+ experiments demonstrate that AWT-Net achieves competitive performance on 3D
+ shape classification and segmentation benchmarks.
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iclr22_adaptive_fig2.png" alt="Figure 2" width="700">
+        <h4 class="subtitle has-text-centered">Figure 2: (Left) Lifting scheme with split, update, and predict steps. (Right) Transformer-based feature fusion using learned frequency components.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iclr22_adaptive_fig3.png" alt="Figure 3" width="800">
+        <h4 class="subtitle has-text-centered">Figure 3: Overview of AWT-Net architecture and its hierarchical multi-resolution decomposition using lifting and wavelet transformers.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iclr22_adaptive_fig4.png" alt="Figure 4" width="800">
+        <h4 class="subtitle has-text-centered">Figure 4: Segmentation examples on ShapeNet Part dataset across different categories using AWT-Net.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iclr22_adaptive_fig5.png" alt="Figure 5" width="600">
+        <h4 class="subtitle has-text-centered">Figure 5: More qualitative results showing shape segmentation from various viewpoints.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{huang2021adaptive,
+          title={Adaptive wavelet transformer network for 3d shape representation learning},
+          author={Huang, Hao and Fang, Yi},
+          booktitle={International conference on learning representations},
+          year={2021}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

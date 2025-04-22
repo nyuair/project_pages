@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Geometric-Aware Adversarial Training improves 3D point cloud completion performance and robustness using adversarial augmentation.">
+  <meta property="og:title" content="3D Point Cloud Completion with Geometric-Aware Adversarial Augmentation" />
+  <meta property="og:description" content="An adversarial augmentation method for robust 3D point cloud completion using curvature-constrained perturbations." />
+  <meta property="og:url" content="https://yourusername.github.io/3D-Adversarial-Completion" />
+  <meta property="og:image" content="static/images/icpr22_3d_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="3D Point Cloud Completion with Geometric-Aware Adversarial Augmentation">
+  <meta name="twitter:description" content="Adversarial training strategy for 3D point cloud shape completion leveraging principal directions.">
+  <meta name="twitter:image" content="static/images/icpr22_3d_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D point cloud, shape completion, adversarial training, geometric-aware, PMPD-k">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>3D Point Cloud Completion with Adversarial Augmentation</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">3D Point Cloud Completion with Geometric-Aware Adversarial Augmentation</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Mengxi Wu<sup>1</sup>, Hao Huang<sup>1</sup>, Yi Fang<sup>1*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>New York University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICPR 2022</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://arxiv.org/pdf/2109.10161" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr22_3d_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">The pipeline of Geometric-Aware Adversarial Training with clean and adversarial inputs.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          has focused on designing novel neural network architectures for accurate 3D point cloud completion.
+ However, unlike in point cloud classification and reconstruction, the role of adversarial samples in
+ 3D point cloud completion has seldom been explored. In this work, we show that training with
+ adversarial samples can improve the performance of neural networks on 3D point cloud completion
+ tasks. We propose a novel approach to generate adversarial samples that benefit both the performance
+ of clean and adversarial samples. In contrast to the PGD-k attack, our method generates adversarial
+ samples that keep the geometric features in clean samples and contain few outliers. In particular, we
+ use principal directions to constrain the adversarial perturbations for each input point. The gradient
+ components in the mean direction of principal directions are taken as adversarial perturbations. In
+ addition, we also investigate the effect of using the minimum curvature direction. Besides, we
+ adopt attack strength accumulation and auxiliary Batch Normalization layers method to speed up
+ the training process and alleviate the distribution mismatch between clean and adversarial samples.
+ Experimental results show that training with the adversarial samples crafted by our method effectively
+ enhances the performance of PCN on the ShapeNet dataset.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr22_3d_fig2.png" alt="Method Figure 1" width="500" />
+        <h4 class="subtitle has-text-centered">Normal variation analysis for estimating principal directions on the tangent plane.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr22_3d_fig3.png" alt="Method Figure 2" width="700" />
+        <h4 class="subtitle has-text-centered">PMPD-k attack algorithm steps with projected gradients constrained by principal directions.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr22_3d_fig4.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Sample visualization results on clean and unseen categories. PMPD preserves shape best.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr22_3d_fig5.png" alt="Results 2" width="700" />
+        <h4 class="subtitle has-text-centered">Quantitative results on seen category.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- (HTML before remains the same) -->
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{wu20223d,
+          title={3d point cloud completion with geometric-aware adversarial augmentation},
+          author={Wu, Mengxi and Huang, Hao and Fang, Yi},
+          booktitle={2022 26th International Conference on Pattern Recognition (ICPR)},
+          pages={4001--4007},
+          year={2022},
+          organization={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

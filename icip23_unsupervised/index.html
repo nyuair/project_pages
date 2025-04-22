@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="3D Unsupervised Region-Aware Registration Transformer">
+  <meta property="og:title" content="3D-URRT: Region-Aware Registration Transformer" />
+  <meta property="og:description" content="An unsupervised 3D registration framework predicting region-conditioned transformations for robust point cloud alignment." />
+  <meta property="og:url" content="https://haoyu6427.github.io/3D-URRT" />
+  <meta property="og:image" content="static/images/urrt_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="3D-URRT: Region-Aware Registration Transformer">
+  <meta name="twitter:description" content="A novel unsupervised transformer-based method for 3D point cloud registration.">
+  <meta name="twitter:image" content="static/images/urrt_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D registration, point cloud, unsupervised learning, transformer, deep learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>3D-URRT</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">3D Unsupervised Region-Aware Registration Transformer</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Yu Hao<sup>1</sup>, Yi Fang<sup>1,2*</sup>
+          </span>
+          <br>
+          <span class="author-block">
+            <sup>1</sup>NYU Multimedia and Visual Computing Lab<br>
+            <sup>2</sup>NYUAD Center for AI & Robotics
+          </span>
+          <br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICIP 2024</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10222489" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/fig1_new.png" alt="Overview" width="700" />
+        <h4 class="subtitle has-text-centered">Comparison between the shape-conditioned transformation and region-conditioned transformation.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          This paper concerns the research problem of point cloud registration to find the rigid transformation to optimally align the source point set with the target one. Learning robust point cloud registration models with deep neural networks has emerged as a powerful paradigm, offering promising performance in predicting the global geometric transformation for a pair of point sets. Existing methods first leverage an encoder to regress the global shape descriptor, which is then decoded into a shape-conditioned transformation via concatenation-based conditioning. However, different regions of a 3D shape vary in their geometric structures which makes it more sense that we have a region-conditioned transformation instead of the shape-conditioned one. In this paper, we define our 3D registration function through the introduction of a new design of 3D region partition module that is able to divide the input shape to different regions with a self-supervised 3D shape reconstruction loss without the need for ground truth labels. We further propose the 3D shape transformer module to efficiently and effectively capture short- and long-range geometric dependencies for regions on the 3D shape Consequently, the region-aware decoder module is proposed to predict the transformations for different regions respectively. The global geometric transformation from the source point set to the target one is then formed by the weighted fusion of region-aware transformation. Compared to the state-of-the-art approaches, our experiments show that our 3D-URRT achieves superior registration performance over various benchmark datasets (e.g. ModelNet40).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/ijcai2.1.2.png" alt="Pipeline" width="900" />
+        <h4 class="subtitle has-text-centered">Our proposed 3D-URRT framework contains three main components: 3D region partition module, 3D shape transformer module and region-aware decoder module.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/noise_comparison_raw.png" alt="Qualitative Results" width="900" />
+        <h4 class="subtitle has-text-centered">Randomly selected qualitative results in presence of D.I., P.D., and D.O. noises on the ModelNet40 dataset.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/2result_showcase_raw.png" alt="Ablation Study" width="900" />
+        <h4 class="subtitle has-text-centered">Ablation study on ModelNet40. Comparison between models with and without region-aware decoder and position encoding.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{hao20233d,
+          title={3D Unsupervised Region-Aware Registration Transformer},
+          author={Hao, Yu and Fang, Yi},
+          booktitle={2023 IEEE International Conference on Image Processing (ICIP)},
+          pages={2780--2784},
+          year={2023},
+          organization={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

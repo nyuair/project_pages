@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Meta-Det3D: Learn to Learn Few-Shot 3D Object Detection with class-specific meta-detectors and re-weighting modules.">
+  <meta property="og:title" content="Meta-Det3D: Few-Shot 3D Object Detection" />
+  <meta property="og:description" content="A novel meta-learning-based framework that enables few-shot 3D object detection using support examples and class-specific re-weighting." />
+  <meta property="og:url" content="https://yourusername.github.io/meta-det3d" />
+  <meta property="og:image" content="static/images/meta_det3d_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Meta-Det3D: Few-Shot 3D Detection">
+  <meta name="twitter:description" content="Meta-learning for few-shot 3D object detection using class-aware re-weighting.">
+  <meta name="twitter:image" content="static/images/meta_det3d_twitter.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="meta-learning, 3D object detection, few-shot learning, point cloud, Meta-Det3D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Meta-Det3D</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Meta-Det3D: Learn to Learn Few-Shot 3D Object Detection</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">Shuaihang Yuan<sup>*</sup>, Xiang Li<sup>*</sup>, Hao Huang, Yi Fang</span><br>
+          <span class="author-block">NYU Multimedia and Visual Computing Lab<br>
+            NYUAD Center for AI & Robotics<br>NYU Tandon School of Engineering</span><br>
+          <small><sup>*</sup>Equal Contribution</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ACCV 2022</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://openaccess.thecvf.com/content/ACCV2022/papers/Yuan_Meta-Det3D_Learn_to_Learn_Few-Shot_3D_Object_Detection_ACCV_2022_paper.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/accv22_meta_fig1.png" alt="Overview Figure" width="900" />
+        <h4 class="subtitle has-text-centered">. Given abundant annotated samples of base classes and a few annotated samples of novel
+classes, our proposed model aims to learn from limited novel class samples to detect unseen 3D
+objects from the novel classes. (Top) Annotated chairs and sofas in base classes. (Bottom) Beds
+in the novel classes. Note that the objects are incomplete in the scanned 3D point cloud scenes.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          This paper addresses the problem of few-shot indoor 3D object detection by proposing a meta-learning-based framework that only relies on a few
+labeled samples from novel classes for training. Our model has two major components: a 3D meta-detector and a 3D object detector. Given a query 3D point
+cloud and a few support samples, the 3D meta-detector is trained over different
+3D detection tasks to learn task distributions for different object classes and dynamically adapt the 3D object detector to complete a specific detection task. The
+3D object detector takes task-specific information as input and produces 3D object detection results for the query point cloud. Specifically, the 3D object detector
+first extracts object candidates and their features from the query point cloud using a point feature learning network. Then, a class-specific re-weighting module
+generates class-specific re-weighting vectors from the support samples to characterize the task information, one for each distinct object class. Each re-weighting
+vector performs channel-wise attention to the candidate features to re-calibrate
+the query object features, adapting them to detect objects of the same classes.
+Finally, the adapted features are fed into a detection head to predict classification
+scores and bounding boxes for novel objects in the query point cloud. Several
+experiments on two 3D object detection benchmark datasets demonstrate that our
+proposed method acquired the ability to detect 3D objects in the few-shot setting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/accv22_meta_fig2.png" alt="Method Figure" width="900" />
+        <h4 class="subtitle has-text-centered">Our MetaDet3D contains two components. The first component (bottom) is the 3D metadetector which provides task/class-specific object detection guidance through a group of classspecific re-weighting vectors. The second component (top) is the 3D object detector that takes
+class-specific re-weighting vectors as input and predicts object bounding boxes and labels using
+three sub-components.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/accv22_meta_fig3.png" alt="Results Figure 1" width="900" />
+        <h4 class="subtitle has-text-centered">Qualitative results on SUN RGB-D.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/accv22_meta_fig4.png" alt="Results Figure 2" width="900" />
+        <h4 class="subtitle has-text-centered">. Qualitative results on ScanNet.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{yuan2022meta,
+          title={Meta-det3d: Learn to learn few-shot 3d object detection},
+          author={Yuan, Shuaihang and Li, Xiang and Huang, Hao and Fang, Yi},
+          booktitle={Proceedings of the Asian Conference on Computer Vision},
+          pages={1761--1776},
+          year={2022}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

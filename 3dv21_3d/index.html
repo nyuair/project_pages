@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="3D-MetaConNet: Meta-learning for 3D Shape Classification and Segmentation.">
+  <meta property="og:title" content="3D-MetaConNet" />
+  <meta property="og:description" content="A novel meta-learning framework for 3D shape classification and segmentation." />
+  <meta property="og:url" content="https://yourusername.github.io/3D-MetaConNet/" />
+  <meta property="og:image" content="static/images/3dv21_3d_fig1.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D-MetaConNet</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1">3D-MetaConNet: Meta-learning for 3D Shape Classification and Segmentation</h1>
+      <h2 class="subtitle is-4">Hao Huang, Xiang Li, Lingjing Wang, Yi Fang*</h2>
+      <p>NYUMultimedia and Visual Computing Lab, USA <br>
+ New York University, USA<br>
+ New York University Abu Dhabi, UAE</p>
+      <small><sup>*</sup>Corresponding author</small><br>
+     <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>3DV 2021</b></span>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9665930" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container has-text-centered">
+      <h2 class="title is-2" style="color:#6b6bff;">Overview</h2>
+      <figure>
+        <img src="static/images/3dv21_3d_fig1.png" alt="Framework comparison" width="800">
+        <figcaption class="subtitle has-text-centered mt-2">
+          Figure 1: Most supervised neural networks for 3D shape
+ learning, including but not limited to PointNet and
+ PointNet++, can be decomposed into a feature ex
+tractor and a classifier.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Abstract</h2>
+      <p>
+         Supervised learning on 3D shapes are extensively stud
+ied by prior literature, among which PointNet [29] and
+ its variants PointNet++[31] are representatives. However,
+ these methods tackle 3D shape learning problems by train
+ing from scratch using a fixed learning algorithm over large
+ amounts of labeled data, potentially challenged by data and
+ computation bottlenecks. In the paper, we design a novel
+ model, under the framework of meta-learning, to learn 3D
+ shape representation. By training over multiple 3D tasks,
+ each of which is defined as a supervised learning problem,
+ our method can fast adapt to unseen tasks containing lim
+ited labeled data. Specifically, our model consists of a 3D
+meta-learner and a task-oriented 3D-learner, where the
+ 3D-meta-learner produces parameter initialization for the
+ 3D-learner after being trained over different tasks. With
+ adaptively initialized parameters, the 3D-learner can be
+ tuned rapidly in a few steps to achieve good performance on
+ novel tasks with a small amount of training data. To further
+ facilitate discriminative shape feature learning, we intro
+duce a novel task-aware feature adaptation module under
+ a contrastive learning scheme, in which all shapes in each
+ task are considered as a whole and task-oriented compact
+ features are learned. Therefore, we dub our model as 3D
+MetaConNet. Experiments on three public 3D datasets for
+ few-shot shape classification and segmentation demonstrate
+ that our method can learn compact and discriminative 3D
+ shape features efficiently and robustly in a fast adaptation
+ manner. Our method particularly outperforms the methods
+ without a meta-learning framework and is also superior to
+ existing meta-learning approaches.
+      </p>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container has-text-centered">
+      <h2 class="title is-2" style="color:#6b6bff;">Method</h2>
+
+      <figure>
+        <img src="static/images/3dv21_3d_fig2.png" alt="Noise Robustness" width="850">
+        <figcaption class="subtitle has-text-centered mt-2">
+          Figure 2: Figure 2: (Left) Conventional 3D shape learning model. (Right) Our proposed 3D meta network.
+        </figcaption>
+      </figure>
+
+      <br>
+
+      <figure>
+        <img src="static/images/3dv21_3d_fig3.png" alt="Few-shot results" width="850">
+        <figcaption class="subtitle has-text-centered mt-2">
+          Figure 3:  The pipeline of the proposed 3D-MetaConNet. 
+        </figcaption>
+      </figure>
+
+      <br>
+
+      <figure>
+        <img src="static/images/3dv21_3d_fig4.png" alt="Training procedure" width="850">
+        <figcaption class="subtitle has-text-centered mt-2">
+          Figure 4:  Meta-learning optimization workflow and agreement grouping strategy for the feature extractor and contrastive projector.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container has-text-centered">
+      <h2 class="title is-2" style="color:#6b6bff;">Results</h2>
+
+      <figure>
+        <img src="static/images/3dv21_3d_fig5.png" alt="Meta-learning structure" width="850">
+        <figcaption class="subtitle has-text-centered mt-2">
+          Figure 5: Qualitative results of part segmentation for
+ ShapeNetPart meta-test set. The top row is prediction and
+ the bottom row is ground-truth.
+        </figcaption>
+      </figure>
+
+      <br>
+
+      <figure>
+        <img src="static/images/3dv21_3d_fig6.png" alt="Few-shot classification overview" width="850">
+        <figcaption class="subtitle has-text-centered mt-2">
+          Figure 6: Accuracyofdifferentnoise levels. Noise level
+ standsforthestandarddeviationofaGaussiannoise.
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container content">
+      <h2 class="title is-4">BibTeX</h2>
+<pre><code>
+  @inproceedings{huang20213d,
+  title={3D-MetaConNet: Meta-learning for 3D shape classification and segmentation},
+  author={Huang, Hao and Li, Xiang and Wang, Lingjing and Fang, Yi},
+  booktitle={2021 International Conference on 3D Vision (3DV)},
+  pages={982--991},
+  year={2021},
+  organization={IEEE}
+}
+</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Built with ❤️ using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+        Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

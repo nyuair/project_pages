@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="3DMotion-Net: Predicting dense 3D motion from point cloud sequences using continuous flow functions and temporal-aware descriptors.">
+  <meta property="og:title" content="3DMotion-Net: Continuous Flow for 3D Motion Prediction" />
+  <meta property="og:description" content="A self-supervised method to predict future motion and correspondence in 3D point clouds." />
+  <meta property="og:url" content="https://yourusername.github.io/3dmotion-net" />
+  <meta property="og:image" content="static/images/3dmotion_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="3DMotion-Net: Learning 3D Motion from Point Clouds">
+  <meta name="twitter:description" content="Self-supervised dense 3D motion prediction from consecutive scans.">
+  <meta name="twitter:image" content="static/images/3dmotion_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D motion prediction, point cloud, flow estimation, temporal-aware descriptor, self-supervised learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>3DMotion-Net</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">3DMotion-Net: Learning Continuous Flow Function for 3D Motion Prediction</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Shuaihang Yuan<sup>*</sup>, Xiang Li<sup>*</sup>, Anthony Tzes, Yi Fang<sup>&dagger;</sup>
+          </span><br>
+          <span class="author-block">
+            NYU Multimedia and Visual Computing Lab, NYU Abu Dhabi and NYU Tandon
+          </span><br>
+          <small><sup>*</sup>Equal contribution. <sup>&dagger;</sup>Corresponding author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>IROS 2020</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9341671" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros20_3dmotion_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Illustration of 3D Motion prediction. Our model takes two
+consecutive point sets in 3D space as input and predicts the flow between
+two consecutive point sets. The learned motion patterns are used to infer
+future motion by predicting the flow field from the current frame to the
+future one.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          This paper deals with predicting future 3D motions of 3D object scans from the previous two consecutive
+frames. Previous methods mostly focus on sparse motion prediction in the form of skeletons. While in this paper, we focus on
+predicting dense 3D motions in the form of 3D point clouds. To
+approach this problem, we propose a self-supervised approach
+that leverages the power of the deep neural network to learn
+a continuous flow function of 3D point clouds that can predict
+temporally consistent future motions and naturally bring out
+the correspondences among consecutive point clouds at the
+same time. More specifically, in our approach, to eliminate
+the unsolved and challenging process of defining a discrete
+point convolution on 3D point cloud sequences to encode
+spatial and temporal information, we introduce a learnable
+latent code to represent the temporal-aware shape descriptor,
+which is optimized during the model training. Moreover, a
+temporally consistent motion Morpher is proposed to learn a
+continuous flow field which deforms a 3D scan from the current
+frame to the next frame. We perform extensive experiments
+on D-FAUST, SCAPE, and TOSCA benchmark data sets. The
+results demonstrate that our approach is capable of handling
+temporally inconsistent input and produces consistent future
+3D motion while requiring no ground truth supervision.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros20_3dmotion_fig2.png" alt="Pipeline" width="900" />
+        <h4 class="subtitle has-text-centered">The 3DMotion-Net pipeline with latent descriptor optimization and flow generation using MLP-based Morpher.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros20_3dmotion_fig3.png" alt="SCAPE Results" width="900" />
+        <h4 class="subtitle has-text-centered">Qualitative results on the temporal consistent SCAPE data set.
+Corresponding points are painted with same color.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros20_3dmotion_fig4.png" alt="Noisy Input Results" width="900" />
+        <h4 class="subtitle has-text-centered">Qualitative results on the inconsistent data with noises and
+occlusions. The high light part in this figure clearly shows that our proposed
+method can produce consistent prediction even when the inconsistent inputs
+are given.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{yuan20203dmotion,
+          title={3dmotion-net: Learning continuous flow function for 3d motion prediction},
+          author={Yuan, Shuaihang and Li, Xiang and Tzes, Anthony and Fang, Yi},
+          booktitle={2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+          pages={8154--8160},
+          year={2020},
+          organization={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

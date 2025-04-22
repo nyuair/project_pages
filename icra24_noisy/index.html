@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A robust few-shot 3D point cloud segmentation method that handles noisy labels using graph-based meta-learning.">
+  <meta property="og:title" content="Noisy Few-shot 3D Point Cloud Scene Segmentation" />
+  <meta property="og:description" content="Graph-based meta-learning with multi-prototype denoising and label propagation for robust few-shot segmentation." />
+  <meta property="og:url" content="https://yourusername.github.io/noisy-fewshot-3dseg" />
+  <meta property="og:image" content="static/images/noisy3d_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Noisy Few-shot 3D Point Cloud Segmentation">
+  <meta name="twitter:description" content="Tackling noisy labels in few-shot 3D point cloud segmentation with multi-prototype graphs and contrastive learning.">
+  <meta name="twitter:image" content="static/images/noisy3d_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D point cloud, few-shot segmentation, noisy labels, graph learning, robotics, ICRA 2024">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Noisy 3D Segmentation</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Noisy Few-shot 3D Point Cloud Scene Segmentation</h1>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">Hao Huang<sup>†</sup>, Shuaihang Yuan<sup>†</sup>, CongCong Wen, Yu Hao, Yi Fang</span><br>
+          <span class="author-block"><sup>†</sup>Equal contribution</span><br>
+          <span class="author-block"> Embodied AI and Robotics (AIR) Lab, NYU
+ Tandon and NYU Abu Dhabi</span><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICRA 2024</b></span>
+        </div>
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10611583" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+          <a href="https://github.com/hhuang-code/Noisy_Fewshot_Segmentation" class="button is-light is-rounded">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Code</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra24_noisy_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered"> Left: Overview of the proposed method. Right: Graph concentration by adjusting edges. The vertices with the same label are in the same color.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          3D scene semantic segmentation plays a crucial
+ role in robotics by enabling robots to understand and interpret
+ their environment in a detailed and context-aware manner,
+ facilitating tasks such as navigation, object manipulation, and
+ interaction within complex spaces. A preponderance of method
+ology predominantly adopts a fully supervised framework for
+ 3D point cloud scene semantic segmentation. Such paradigms
+ exhibit an intrinsic dependency on extensive labeled datasets,
+ presenting challenges in acquisition and exhibiting incapacity
+ to segment novel classes, especially when the training data are
+ contaminated by noisy samples. To address these limitations,
+ this study introduces a novel few-shot segmentation approach to
+ robustly segment 3D point cloud scenes with noisy labels using
+ a meta-learning scheme. Specifically, we first build a multi
+prototype graph and then suppress samples with noisy labels
+ based on the graph structure. A subgraph bagging scheme is
+ then proposed to conduct semi-supervised transductive learning
+ to propagate labels. To optimize the graph structure to learn
+ discriminative prototype features, we design a triplet contrastive
+ loss to increase the compactness of these subgraphs. We
+ evaluated our method on two widely used 3D point cloud
+ scene segmentation benchmarks within few-shot (i.e., 2/3-way
+ 5-shot) segmentation settings with noisy samples. Experimental
+ results demonstrate the improvement of our method over the
+ compared baselines, illustrating the robustness of our method
+ in few-shot 3D scene segmentation against noisy samples. 
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra24_noisy_fig2.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Visual comparisons of our method, ProtoNet, and the ground-truth labels on six blocks of scenes from S3DIS dataset.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra24_noisy_fig3.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">Quantitative Results. </h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra24_noisy_fig4.png" alt="Results 3" width="600" />
+        <h4 class="subtitle has-text-centered">Quantitative Results. </h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{huang2024noisy,
+          title={Noisy few-shot 3d point cloud scene segmentation},
+          author={Huang, Hao and Yuan, Shuaihang and Wen, CongCong and Hao, Yu and Fang, Yi},
+          booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)},
+          pages={11070--11077},
+          year={2024},
+          organization={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

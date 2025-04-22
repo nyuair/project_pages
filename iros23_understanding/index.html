@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Understanding the impact of image quality and object distance on object detection performance with RA-YOLO.">
+  <meta property="og:title" content="Understanding the Impact of Image Quality and Distance of Objects to Object Detection Performance" />
+  <meta property="og:description" content="A comprehensive study of spatial resolution, amplitude compression, and object distance on detection performance using RA-YOLO." />
+  <meta property="og:url" content="https://haoyu6427.github.io/RA-YOLO" />
+  <meta property="og:image" content="static/images/ra_yolo_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Understanding the Impact of Image Quality and Distance of Objects to Object Detection Performance">
+  <meta name="twitter:description" content="Analyzing image quality and object distance impacts using RA-YOLO.">
+  <meta name="twitter:image" content="static/images/ra_yolo_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="object detection, YOLO, spatial resolution, compression, autonomous driving, image quality">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RA-YOLO</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Understanding the Impact of Image Quality and Distance of Objects to Object Detection Performance</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Yu Hao<sup>1,2</sup>, Haoyang Pei<sup>2</sup>, Yixuan Lyu<sup>2</sup>, Zhongzheng Yuan<sup>2</sup>,
+            John-Ross Rizzo<sup>2,4</sup>, Yao Wang<sup>2</sup>, Yi Fang<sup>1,2,3*</sup>
+          </span>
+          <br>
+          <span class="author-block">
+            <sup>1</sup>NYU Multimedia and Visual Computing Lab, <sup>2</sup>NYU Tandon School of Engineering,<br>
+            <sup>3</sup>NYUAD Center for AI & Robotics, <sup>4</sup>NYU Langone Health
+          </span>
+          <br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>IROS 2023</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10342139" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/spatial_amplitude_distance2.png" alt="Overview" width="700" />
+        <h4 class="subtitle has-text-centered">Factors affecting object detection: spatial resolution, amplitude resolution, and object distance.</h4>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+         Object detection is a fundamental task for autonomous driving, which aim to identify and localize objects within an image. Deep learning has made great strides for object detection, with popular models including Faster R-CNN, YOLO, and SSD. The detection accuracy and computational cost of object detection depend on the spatial resolution of an image, which may be constrained by both the camera and storage considerations.  Furthermore, original images are often compressed and uploaded to a remote server for object detection. Compression is often achieved by reducing either spatial or amplitude resolution or, at times, both, both of which have well-known effects on performance.  Detection accuracy also depends on the distance of the object of interest from the camera. Our work examines the impact of spatial and amplitude resolution, as well as object distance, on object detection accuracy and computational cost. As existing models are optimized for uncompressed  (or lightly compressed) images over a narrow range of spatial resolution, we develop a resolution-adaptive variant of YOLOv5 (RA-YOLO), which varies the number of scales in the feature pyramid and detection head based on the spatial resolution of the input image. To train and evaluate this new method, we created a dataset of images with diverse spatial and amplitude resolutions by combining images from the TJU and Eurocity datasets and generating different resolutions by applying spatial resizing and compression. We first show that RA-YOLO achieves a good trade-off between detection accuracy and inference time over a large range of spatial resolutions. We then evaluate the impact of spatial and amplitude resolutions on object detection accuracy using the proposed RA-YOLO model. We demonstrate that the optimal spatial resolution that leads to the highest detection accuracy depends on the 'tolerated' image size (constrained by the available bandwidth or storage). We further assess the impact of the distance of an object to the camera on the detection accuracy and show that higher spatial resolution enables a greater detection range. These results provide important guidelines for choosing the image spatial resolution and compression settings predicated on available bandwidth, storage, desired inference time, and/or desired detection range, in practical applications.  
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/mr_fig1.4.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">The proposed RA-YOLO architecture dynamically adapts feature processing for different input resolutions.</h4>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/compare_different_factor2.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Sample detection results for images under different  spatial resolution, amplitude resolution, and object distance.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/temp_fig.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">Detection accuracy vs (a,b) Image Size and (c,d) PSNR under different spatial resolutions.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/recall_distance2.png" alt="Results 3" width="900" />
+        <h4 class="subtitle has-text-centered">(a) Recall vs distance under the  precision of 0.82  for Pedestrian; (b) The detection range to achieve recall of 0.77 and precision of 0.8.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{hao2023understanding,
+          title={Understanding the impact of image quality and distance of objects to object detection performance},
+          author={Hao, Yu and Pei, Haoyang and Lyu, Yixuan and Yuan, Zhongzheng and Rizzo, John-Ross and Wang, Yao and Fang, Yi},
+          booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+          pages={11436--11442},
+          year={2023},
+          organization={IEEE}
+        }       
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

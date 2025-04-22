@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PTNet-PLT: a point transformer network with pyramid learnable tokens for 3D LiDAR place recognition.">
+  <meta property="og:title" content="Pyramid Learnable Tokens for 3D LiDAR Place Recognition" />
+  <meta property="og:description" content="A novel point transformer network with pyramid learnable tokens for robust 3D LiDAR place recognition." />
+  <meta property="og:url" content="https://yourusername.github.io/ptnet-plt" />
+  <meta property="og:image" content="static/images/ptnet_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="PTNet-PLT: 3D LiDAR Place Recognition">
+  <meta name="twitter:description" content="Pyramid Learnable Tokens and Shifted Cube Attention for robust place recognition from raw 3D LiDAR scans.">
+  <meta name="twitter:image" content="static/images/ptnet_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D LiDAR, place recognition, point transformer, learnable tokens, robotics, PTNet-PLT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PTNet-PLT</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Pyramid Learnable Tokens for 3D LiDAR Place Recognition</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Congcong Wen<sup>1</sup>, Hao Huang<sup>1</sup>, Yu-Shen Liu<sup>2</sup>, Yi Fang<sup>1*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYUAD Center for AI & Robotics and NYU Multimedia & Visual Computing Lab<br>
+            <sup>2</sup>School of Software, Tsinghua University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICRA 2023</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10161523" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra23_pyramid_fig1.png" alt="Overview" width="600" />
+        <h4 class="subtitle has-text-centered">An illustration of the difference of evaluated scans. (a) an accu
+mulated scan with 4096 equally distributed points that are most commonly
+ adopted by existing studies evaluation; (b) an actual 3D scan with 20k+ not
+ equally distributed points that are additionally evaluated in this paper.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          3D LiDAR place recognition plays a vital role
+ in various robot applications,, including robotic navigation,
+ autonomous driving, and simultaneous localization and map
+ping. However, most previous studies evaluated their models on
+ accumulated 2D scans instead of real-world 3D LiDAR scans
+ with a larger number of points, which limits the application
+ in real scenarios. To address this limitation, we propose a
+ point transformer network with pyramid learnable tokens
+ (PTNet-PLT) to learn global descriptors for an actual scanned
+ 3D LiDAR place recognition. Specifically, we first present a
+ novel shifted cube attention module that consists of a self
+attention module for local feature extraction and a cross
+attention module for regional feature aggregation. The self
+attention module constrains attention computation on a locally
+ partitioned cube and builds connections across cubes based on
+ the shifted cube scheme. In addition, the cross-attention module
+ introduces several learnable tokens to separately aggregate
+ features of points with similar features but spatially distant
+ into an arbitrarily shaped region, which enables the model to
+ capture long-term dependencies of the points. Next, we build
+ a pyramid architecture network to learn multi-scale features
+ and involve a decreasing number of tokens at each layer to
+ aggregate features over a larger region. Finally, we obtain the
+ global descriptor by concatenating learned region tokens of all
+ layers. Experiments on three datasets, including USyd Campus,
+ Oxford Robot-Car, and KITTI, demonstrate the effectiveness
+ and generalization of the proposed model for large-scale 3D
+ LiDAR place recognition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra23_pyramid_fig2.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">Illustration of the overall architecture of the PTNet-PLT model. The point cloud is first input to a Feature Embedding Module to aggregate local
+ geometric information. And then the updated features are passed into the proposed Shifted Cube Attention (SCA) Module for feature extraction. Next, the
+ learned features go through three layers, each of which consists of a Down Sampling Module and a Shifted Cube Attention (SCA) Module. Meanwhile,
+ the learnable tokens of each stage aggregate local features to arbitrarily shaped region features for capturing the long-term dependencies of point clouds.
+ Finally, the learned region descriptor of learnable token from different stages are concatenated into a final global descriptor.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra23_pyramid_fig3.png" alt="Method" width="700" />
+        <h4 class="subtitle has-text-centered">An illustration of the Shifted Cube Attention (SCA) Module
+ that consists of Self-Attention Module and Cross-Attention Module. The
+ region where the features learned by each learnable token is circled by a
+ corresponding colored ellipse at the bottom-left corner.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra23_pyramid_fig4.png" alt="Results 1" width="600" />
+        <h4 class="subtitle has-text-centered">Comparison of PTNet-PLT with state-of-the-art methods on the Oxford RobotCar dataset, showing superior accuracy.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icra23_pyramid_fig5.png" alt="Results 2" width="700" />
+        <h4 class="subtitle has-text-centered">Performance on Oxford RobotCar and KITTI datasets highlights generalization across environments.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{wen2023pyramid,
+          title={Pyramid learnable tokens for 3d lidar place recognition},
+          author={Wen, Congcong and Huang, Hao and Liu, Yu-Shen and Fang, Yi},
+          booktitle={2023 IEEE International Conference on Robotics and Automation (ICRA)},
+          pages={4143--4149},
+          year={2023},
+          organization={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>

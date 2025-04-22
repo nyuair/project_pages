@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A robust frontier selection method for Zero-Shot Object Goal Navigation using foundation models.">
+  <meta property="og:title" content="Exploring Foundation Model-Based Frontier Selection in ZS-OGN" />
+  <meta property="og:description" content="Diversified Expert Frontier Analysis (DEFA) and Consensus Decision Making (CDM) enable robust zero-shot object goal navigation." />
+  <meta property="og:url" content="https://yourusername.github.io/ZS-OGN" />
+  <meta property="og:image" content="static/images/zs_ogn_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="ZS-OGN with Foundation Models">
+  <meta name="twitter:description" content="Robust frontier selection for zero-shot object goal navigation using foundation models.">
+  <meta name="twitter:image" content="static/images/zs_ogn_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="zero-shot navigation, object goal, frontier selection, foundation models, DEFA, CDM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ZS-OGN Navigation</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Exploring the Reliability of Foundation Model-Based Frontier Selection in Zero-Shot Object Goal Navigation</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Shuaihang Yuan<sup>1,2,4</sup>, Halil Utku Unlu<sup>3</sup>, Hao Huang<sup>2,4</sup>, Congcong Wen<sup>2,4</sup>, Anthony Tzes<sup>1,2</sup>, Yi Fang<sup>1,2,4*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYUAD Center for AI and Robotics, <sup>2</sup>NYU Abu Dhabi, <sup>3</sup>NYU Tandon, <sup>4</sup>Embodied AI and Robotics (AIR) Lab
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICPR 2025</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://arxiv.org/pdf/2410.21037" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_exploring_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered"> Instances of nonsensical or irrelevant reasoning, during the frontier selection in Zero-Shot
+Object Goal Navigation. The green text indicates a correct understanding of the scene, while the
+red text refers to the reasoning that contradicts human intuition.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          . In this paper, we present a novel method for reliable frontier selection in Zero-Shot Object Goal Navigation (ZS-OGN), enhancing robotic navigation systems with foundation models to improve commonsense reasoning in indoor environments. Our approach introduces a multi-expert decision framework
+to address the nonsensical or irrelevant reasoning often seen in foundation modelbased systems. The method comprises two key components: Diversified Expert
+Frontier Analysis (DEFA) and Consensus Decision Making (CDM). DEFA utilizes three expert models—furniture arrangement, room type analysis, and visual
+scene reasoning—while CDM aggregates their outputs, prioritizing unanimous
+or majority consensus for more reliable decisions. Demonstrating state-of-theart performance on the RoboTHOR and HM3D datasets, our method excels at
+navigating towards untrained objects or goals and outperforms various baselines,
+showcasing its adaptability to dynamic real-world conditions and superior generalization capabilities.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+<section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_exploring_fig2.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Workflow of the proposed ZS-OGN system, RF-NAV, for Zero-Shot Object Goal Navigation (ZS-OGN). </h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_exploring_fig3.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">Consensus Decision Making.</h4>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_exploring_fig4.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">. A comparison of the generated paths to target objects between our proposed method and
+ESC.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_exploring_fig5.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">The comparison of the distribution of the average number of actions to complete the zeroshot OGN across different target objects between our method and ESC. </h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{yuan2025exploring,
+          title={Exploring the reliability of foundation model-based frontier selection in zero-shot object goal navigation},
+          author={Yuan, Shuaihang and Unlu, Halil Utku and Huang, Hao and Wen, Congcong and Tzes, Anthony and Fang, Yi},
+          booktitle={International Conference on Pattern Recognition},
+          pages={119--134},
+          year={2025},
+          organization={Springer}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

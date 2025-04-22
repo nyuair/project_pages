@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Reliable Semantic Understanding for Real World Zero-shot Object Goal Navigation">
+  <meta property="og:title" content="Reliable Semantic Understanding for Real World Zero-shot Object Goal Navigation" />
+  <meta property="og:description" content="We introduce an innovative approach to enhancing semantic understanding in zero-shot object goal navigation using a dual-model verification framework." />
+  <meta property="og:url" content="https://haoyu6427.github.io/project_pages/icpr25_reliable/" />
+  <meta property="og:image" content="static/images/icpr25_reliable_fig1.png" />
+
+  <meta name="twitter:title" content="Reliable Semantic Understanding for Real World Zero-shot Object Goal Navigation">
+  <meta name="twitter:description" content="A real-world deployment of a semantic reasoning system for zero-shot object goal navigation using GLIP and InstructBLIP." />
+  <meta name="twitter:image" content="static/images/icpr25_reliable_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="ZS-OGN, robot navigation, vision-language model, semantic understanding, GLIP, InstructBLIP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Reliable ZS-OGN - ICPR 2025</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Reliable Semantic Understanding for Real World Zero-shot Object Goal Navigation</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Halil Utku Unlu<sup>1</sup>, Shuaihang Yuan<sup>2,3,4*</sup>, Congcong Wen<sup>2,4</sup>, Hao Huang<sup>2,4</sup>, Anthony Tzes<sup>2,3</sup>, Yi Fang<sup>2,3,4</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYU Tandon School of Engineering<br>
+            <sup>2</sup>NYU Abu Dhabi<br>
+            <sup>3</sup>Center for Artificial Intelligence and Robotics<br>
+            <sup>4</sup>Embodied AI and Robotics Lab
+          </span><br>
+          <small><sup>*</sup>Equal contribution</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ICPR 2025</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://arxiv.org/pdf/2410.21926" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_reliable_fig1.png" alt="Overview" width="850" />
+        <h4 class="subtitle has-text-centered">Illustration of our “Doubly Right” semantic understanding framework for Zero-shot Object Goal Navigation. GLIP first detects the object candidate, and InstructBLIP verifies the detection before navigation proceeds.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          We introduce an innovative approach to advancing semantic
+understanding in zero-shot object goal navigation (ZS-OGN), enhancing
+the autonomy of robots in unfamiliar environments. Traditional reliance
+on labeled data has been a limitation for robotic adaptability, which
+we address by employing a dual-component framework that integrates a
+GLIP Vision Language Model for initial detection and an InstructionBLIP model for validation. This combination not only refines object and
+environmental recognition but also fortifies the semantic interpretation,
+pivotal for navigational decision-making. Our method, rigorously tested
+in both simulated and real-world settings, exhibits marked improvements
+in navigation precision and reliability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_reliable_fig2.png" alt="Method Pipeline" width="850" />
+        <h4 class="subtitle has-text-centered">System diagram of the proposed ZS-OGN framework in real-world deployment. Sensor and visual input feed into a semantic pipeline that leverages GLIP and InstructBLIP with commonsense-driven frontier selection and navigation.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_reliable_fig3.png" alt="Quantitative Results Table" width="800" />
+        <h4 class="subtitle has-text-centered">Quantitative comparison of our approach with existing baselines across various distractor scenarios in the PASTURE benchmark.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_reliable_fig4.png" alt="Environment Layout with Detections" width="800" />
+        <h4 class="subtitle has-text-centered">Test environment layout with detected object viewpoints (mug, remote, trashcan) from first-person views.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/icpr25_reliable_fig5.png" alt="Robot Path Planning" width="800" />
+        <h4 class="subtitle has-text-centered">Visualization of robot’s path using medial-axis based safe planner during the search for the trashcan object.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{unlu2025reliable,
+          title={Reliable semantic understanding for real world zero-shot object goal navigation},
+          author={Unlu, Halil Utku and Yuan, Shuaihang and Wen, Congcong and Huang, Hao and Tzes, Anthony and Fang, Yi},
+          booktitle={International Conference on Pattern Recognition},
+          pages={135--150},
+          year={2025},
+          organization={Springer}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

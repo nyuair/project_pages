@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A retrieval-specific view learning framework to enhance sketch-to-3D shape retrieval.">
+  <meta property="og:title" content="Retrieval-Specific View Learning for Sketch-to-Shape Retrieval" />
+  <meta property="og:description" content="A deep learning framework designed to optimize view selection for improving cross-modal retrieval between sketches and 3D shapes." />
+  <meta property="og:url" content="https://yourusername.github.io/sketch2shape" />
+  <meta property="og:image" content="static/images/sketch2shape_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Retrieval-Specific View Learning for Sketch-to-Shape Retrieval">
+  <meta name="twitter:description" content="Learning to select the most discriminative views for effective sketch-to-shape retrieval.">
+  <meta name="twitter:image" content="static/images/sketch2shape_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Sketch-based 3D retrieval, retrieval-specific view, deep learning, cross-modal matching, 3D shape analysis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sketch2Shape Retrieval</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Retrieval-Specific View Learning for Sketch-to-Shape Retrieval</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Shuaihang Yuan<sup>1</sup>, Congcong Wen<sup>1</sup>, Yu-Shen Liu<sup>1,3</sup>, Yi Fang<sup>1,2*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>NYU Multimedia and Visual Computing Lab, NYU Abu Dhabi<br>
+            <sup>2</sup>NYU Tandon School of Engineering<br>
+            <sup>3</sup>School of Software, Tsinghua University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>IEEE TMM 2023</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10155453" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_retrieval_fig2.png" alt="Overview Figure" width="700" />
+        <h4 class="subtitle has-text-centered">Left: Existing view-based SBSR frameworks generate static views
+rendered from pre-selected viewpoints offline. Right: Our proposed method dynamically generates viewpoints according to sketches to render 3D objects.</h4>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          —Sketch-based 3D shape retrieval (SBSR) can be
+approached by learning domain-invariant descriptors or ranking
+metrics from sketches and 2D view images of 3D shapes rendered
+through numerous viewpoints. However, determining the most
+appropriate viewpoints that convey discriminative geometric
+features to benefit the task of SBSR became an essential yet
+not fully explored area. Existing works extract 3D features from
+multi-view images observed through pre-defined viewpoints to
+match 2D sketches. Those methods, however, fail to dynamically
+select viewpoints by considering the SBSR task. In this work, we
+introduce a fully differentiable viewpoint learning paradigm driven
+by the downstream SBSR task, which supports the task-aware
+and sketch-dependent dynamic viewpoint determination process.
+We naturally integrate this task-specific and sketch-dependent
+viewpoint learning process into a meta-learning framework to
+develop a novel Dynamic Viewer (DV) module for category-level
+SBSR. DV module comprises a Meta View Learner (MVL) block
+and a View Generator (VG) block. Specifically, as the first part
+of the DV module, the MVL block learns to initiate the necessary
+network parameters of the VG block. Then, the VG block that
+serves as the second part learns the best viewpoints to render 2D
+images. To learn the optimal viewpoints for category-level SBSR,
+we further introduce a view mining loss that aims to maximize the
+similarity of feature-level information among rendered 2D views
+and the query sketch. Further, we adopt a variational autoencoder
+(VAE) to retrieve 3D shapes by setting the newly rendered images
+and query sketch as inputs. Comprehensive experimental results on
+popular SBSR datasets demonstrate that our proposed categorylevel SBSR framework have achieved state-of-the-art performance
+for category-level SBSR task. Furthermore, our approach can be
+easily adapted to address instance-level SBSR task with promising
+results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_retrieval_fig2.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">Illustration of our proposed framework. Our framework first adopts a Dynamic Viewer module, represented in the yellow box, to render views according
+to a given sketch. </h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_retrieval_fig3.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">Detailed illustration of the proposed DV Module.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_retrieval_fig4.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Visualization of predicted camera positions.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_retrieval_fig5.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">3D shapes retrieved by given query sketches on SHREC 13 dataset.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @article{yuan2023retrieval,
+          title={Retrieval-specific view learning for sketch-to-shape retrieval},
+          author={Yuan, Shuaihang and Wen, Congcong and Liu, Yu-Shen and Fang, Yi},
+          journal={IEEE Transactions on Multimedia},
+          year={2023},
+          publisher={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

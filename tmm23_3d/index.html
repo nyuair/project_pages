@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A contrastive learning framework for unsupervised 3D shape representation using adversarial examples.">
+  <meta property="og:title" content="3D Shape Contrastive Representation Learning With Adversarial Examples" />
+  <meta property="og:description" content="ShapeContrast: A novel unsupervised method enhancing 3D shape representation with adversarial training and cross-layer loss." />
+  <meta property="og:url" content="https://yourusername.github.io/ShapeContrast" />
+  <meta property="og:image" content="static/images/shapecontrast_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="ShapeContrast: 3D Shape Representation with Adversarial Examples">
+  <meta name="twitter:description" content="An unsupervised 3D shape representation method using adversarial examples and contrastive learning.">
+  <meta name="twitter:image" content="static/images/shapecontrast_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="3D shape, contrastive learning, adversarial examples, representation learning, point cloud">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ShapeContrast</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">3D Shape Contrastive Representation Learning With Adversarial Examples</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Congcong Wen, Xiang Li, Hao Huang, Yu-Shen Liu, Yi Fang*
+          </span><br>
+          <span class="author-block">
+            NYU Multimedia & Visual Computing Lab and NYUAD Center for AI & Robotics, New York University<br>
+            School of Software, Tsinghua University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>IEEE TMM 2025</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10094000" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_3d_fig1.png" alt="Overview" width="700" />
+        <h4 class="subtitle has-text-centered">Visualization of unsupervisedly learned representations by FoldingNet
+ and ShapeContrast on the test set of ModelNet10 using t-SNE.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          Current supervised methods for 3D shape
+ representation learning have achieved satisfying performance,
+ yet require extensive human-labeled datasets. Unsupervised
+ learning-based methods provide a viable solution by learning
+ shape representations without using ground truth labels. In
+ this study, we develop a contrastive learning framework for
+ unsupervised representation learning of 3D shapes. Specifically,
+ in order to encourage models to pay more attention to useful
+ information during representation learning, we first introduce a
+ new paradigm for critical points search based on the adversarial
+ mechanism. We extract critical points with a larger impact on the
+ global feature by attacking a pre-trained auto-encoder model, and
+ apply data augmentations on these points to generate adversarial
+ examples. Taking a pair of adversarial examples as inputs, we
+ obtain their intermediate embeddings and global representations
+ of corresponding inputs, which are then transformed into
+ latent spaces by two predictor heads. Finally, we train the
+ proposed model by maximizing the agreements on these latent
+ spaces via Normalized Temperature-scaled Cross Entropy
+ (NT-Xent) loss and a newly designed Cross-layer Normalized
+ Temperature-scaled Cross Entropy (Cross-NT-Xent) loss, where
+ the latter is proposed in this article to enforce cross-layer feature
+ similarities. The effectiveness, robustness, and transferability
+ of learned representations are validated on three downstream
+ tasks, including object classification, few-shot classification, and
+ shape retrieval. Experiments on three benchmark datasets show
+ that our learned representations achieve better or competitive
+ performance than current state-of-the-art methods in these
+ downstream tasks. Moreover, our model can easily be extended to
+ 3D part segmentation and scene segmentation tasks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_3d_fig2.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">Overview of the proposed ShapeContrast.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_3d_fig3.png" alt="Method" width="700" />
+        <h4 class="subtitle has-text-centered"> Illustration of adversarial examples generation.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_3d_fig4.png" alt="Results 1" width="600" />
+        <h4 class="subtitle has-text-centered">Visualization of the adversarial points identified on the point cloud
+ examples of the Modelnet40 dataset.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_3d_fig5.png" alt="Results 2" width="700" />
+        <h4 class="subtitle has-text-centered">Visualization of randomly selected examples from train dataset (Mod
+elNet40) and test dataset (ScanObjectNN and ScanNet).</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/tmm23_3d_fig6.png" alt="Results 3" width="600" />
+        <h4 class="subtitle has-text-centered">Classification results of our model and the comparison models
+ onthe ModelNet40 and ModelNet10 dataset.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @article{wen20233d,
+          title={3D shape contrastive representation learning with adversarial examples},
+          author={Wen, Congcong and Li, Xiang and Huang, Hao and Liu, Yu-Shen and Fang, Yi},
+          journal={IEEE Transactions on Multimedia},
+          year={2023},
+          publisher={IEEE}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

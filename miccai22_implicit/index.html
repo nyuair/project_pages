@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Implicit Neural Representations for high-resolution segmentation of head and neck organs in CT scans.">
+  <meta property="og:title" content="Implicit Neural Representations for Medical Imaging Segmentation" />
+  <meta property="og:description" content="IOSNet leverages continuous implicit functions to outperform UNet for medical imaging segmentation while being memory-efficient and resolution-agnostic." />
+  <meta property="og:url" content="https://yourusername.github.io/IOSNet" />
+  <meta property="og:image" content="static/images/miccai22_implicit_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Implicit Neural Representations for Medical Imaging Segmentation">
+  <meta name="twitter:description" content="Continuous segmentation functions with IOSNet yield superior performance, faster convergence, and super-resolution support.">
+  <meta name="twitter:image" content="static/images/miccai22_implicit_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="medical imaging, segmentation, implicit representation, IOSNet, CT, UNet, Dice score">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IOSNet: Implicit Neural Representations for Medical Imaging</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Implicit Neural Representations for Medical Imaging Segmentation</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Muhammad Osama Khan<sup>1</sup>, Yi Fang<sup>1,2*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>New York University, <sup>2</sup>New York University Abu Dhabi
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>MICCAI 2022</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://www.scopus.com/record/display.uri?eid=2-s2.0-85139042556&origin=inward&txGid=641dbb77a96560828ba977e586a31c38" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/miccai22_implicit_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">IOSNet: In contrast to existing segmentation methods that use discrete grid-based output representations, IOSNet learns a continuous segmentation function.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          3D signals in medical imaging, such as CT scans, are usually
+parameterized as a discrete grid of voxels. For instance, existing state-ofthe-art organ segmentation methods learn discrete segmentation maps.
+Unfortunately, the memory requirements of such methods grow cubically
+with increasing spatial resolution, which makes them unsuitable for processing high resolution scans. To overcome this, we design an Implicit
+Organ Segmentation Network (IOSNet) that utilizes continuous Implicit
+Neural Representations and has several useful properties. Firstly, the
+IOSNet decoder memory is roughly constant and independent of the
+spatial resolution since it parameterizes the segmentation map as a continuous function. Secondly, IOSNet converges much faster than discrete
+voxel based methods due to its ability to accurately segment organs irrespective of organ sizes, thereby alleviating size imbalance issues without
+requiring any auxiliary tricks. Thirdly, IOSNet naturally supports superresolution (i.e. sampling at arbitrary resolutions during inference) due to
+its continuous learnt representations. Moreover, despite using a simple
+lightweight decoder, IOSNet consistently outperforms the discrete specialized segmentation architecture UNet. Hence, our approach demonstrates that Implicit Neural Representations are well-suited for medical
+imaging applications, especially for processing high-resolution 3D medical scans.
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/miccai22_implicit_fig2.png" alt="Performance" width="900" />
+        <h4 class="subtitle has-text-centered">Left: IOSNet performs better and is significantly more memory efficient with increasing spatial resolution than UNet. Right: Dice score vs epoch plots show IOSNet converges faster, especially for small organs.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/miccai22_implicit_fig3.png" alt="Qualitative Comparison" width="900" />
+        <h4 class="subtitle has-text-centered">UNet learns voxel distributions and hence struggles to segment medium-sized organs initially whereas IOSNet segments them accurately within the first few epochs.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/miccai22_implicit_fig4.png" alt="Super-Resolution" width="900" />
+        <h4 class="subtitle has-text-centered">Left: Super-resolution results of IOSNet vs UNet. Right: IOSNet achieves better Dice scores with clearer boundary predictions due to its continuous representation.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{khan2022implicit,
+          title={Implicit neural representations for medical imaging segmentation},
+          author={Khan, Muhammad Osama and Fang, Yi},
+          booktitle={International conference on medical image computing and computer-assisted intervention},
+          pages={433--443},
+          year={2022},
+          organization={Springer}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

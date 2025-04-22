@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A comprehensive fairness analysis of medical imaging foundation models, exploring pre-training effects across race and sex subgroups.">
+  <meta property="og:title" content="How Fair are Medical Imaging Foundation Models?" />
+  <meta property="og:description" content="Exploring the fairness trade-offs in medical imaging foundation models based on pre-training methods and data." />
+  <meta property="og:url" content="https://yourusername.github.io/medfairness" />
+  <meta property="og:image" content="static/images/ml4h23_how_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Fairness in Medical Imaging Foundation Models">
+  <meta name="twitter:description" content="Comprehensive fairness benchmarking of medical imaging foundation models across subgroups.">
+  <meta name="twitter:image" content="static/images/ml4h23_how_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="foundation models, fairness, self-supervised learning, medical imaging, CheXpert, REMEDIS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fairness in Medical Imaging Foundation Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">How Fair are Medical Imaging Foundation Models?</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Muhammad Osama Khan, Muhammad Muneeb Afzal, Shujaat Mirza, Yi Fang<sup>*</sup>
+          </span><br>
+          <span class="author-block">
+            New York University, New York, USA<br>
+            Center for Artificial Intelligence and Robotics, NYU Abu Dhabi
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>ML4H 2023</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://proceedings.mlr.press/v225/khan23a/khan23a.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/ml4h23_how_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Overview of Foundation Models used in this study describing the pre-training methods, pre-training
+datasets, and model architectures. (M): Medical.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          While medical imaging foundation models have
+led to significant improvements across various
+tasks, the pivotal issue of subgroup fairness in
+these foundation models has remained largely
+unexplored. Our work bridges this research
+gap by presenting the first comprehensive study
+analyzing the subgroup fairness of six diverse
+foundation models, encompassing various pretraining methods, sources of pre-training data,
+and model architectures. In doing so, we discover a concerning trade-off: foundation models pre-trained on medical images achieve better overall performance but are consistently less
+fair than those pre-trained on natural images,
+with sometimes even worse fairness than baseline models trained from scratch. To mitigate
+these fairness disparities, we show that augmenting both the volume of pre-training data
+as well as the number of pre-training epochs,
+enhances subgroup fairness of medical imaging pre-trained models. Furthermore, to decouple the fairness bias from the pre-training
+and fine-tuning stages, we employ balanced
+datasets for fine-tuning. While fine-tuning on
+balanced datasets partially mitigates fairness issues, it is insufficient to completely eliminate
+the biases from the pre-training stage, prompting the need for careful design and evaluation
+of medical imaging foundation models. Our
+granular analysis reveals that medical imaging pre-trained models tend to favor majority
+racial subgroups (White, Asian) whereas natural imaging pre-trained models tend to favor
+minority racial subgroups (Black). Additionally, across all foundation models, we observe
+a consistent underperformance on the female
+patients cohort. As the community moves towards designing specialized foundation models
+for medical imaging, we hope our timely research provides crucial insights to help inform
+more equitable model development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/ml4h23_how_fig2.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Classification performance and fairness metrics for foundation models pre-trained on either natural
+or medical images, benchmarked against baseline models initialized from scratch. Higher is better
+for both the AUC and Fairness subplots.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/ml4h23_how_fig3.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">Impact of balanced fine-tuning on performance and fairness of medical foundation models. Note:
+MAE and MoCov3 pre-trained on medical images exhibit overlapping performance in the Sex
+Fairness subplot.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/ml4h23_how_fig4.png" alt="Results 3" width="900" />
+        <h4 class="subtitle has-text-centered">Change in performance of individual subgroups relative to the average performance across the
+entire population. </h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{khan2023fair,
+          title={How fair are medical imaging foundation models?},
+          author={Khan, Muhammad Osama and Afzal, Muhammad Muneeb and Mirza, Shujaat and Fang, Yi},
+          booktitle={Machine Learning for Health (ML4H)},
+          pages={217--231},
+          year={2023},
+          organization={PMLR}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

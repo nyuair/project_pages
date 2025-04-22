@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A comprehensive benchmark of supervised and self-supervised pre-training on multi-view chest X-ray classification.">
+  <meta property="og:title" content="Multi-view Chest X-ray Classification Benchmark" />
+  <meta property="og:description" content="Benchmarking 10 strong supervised and self-supervised models for multi-view chest X-ray classification under low-data regimes." />
+  <meta property="og:url" content="https://yourusername.github.io/multiview-cxr-benchmark" />
+  <meta property="og:image" content="static/images/midl24_a_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Multi-view Chest X-ray Benchmark">
+  <meta name="twitter:description" content="Comprehensive evaluation of supervised and self-supervised pretraining on multi-view chest X-ray classification.">
+  <meta name="twitter:image" content="static/images/midl24_a_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="chest X-ray, multi-view, medical imaging, self-supervised, supervised, pretraining">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multi-view CXR Benchmark</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">A Comprehensive Benchmark of Supervised and Self-supervised Pre-training on Multi-view Chest X-ray Classification</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Muhammad Muneeb Afzal<sup>1*</sup>, Muhammad Osama Khan<sup>1*</sup>, Yi Fang<sup>1,2</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>New York University, New York, USA <br>
+            <sup>2</sup>New York University Abu Dhabi, Abu Dhabi, UAE
+          </span><br>
+          <small><sup>*</sup>Contributed equally</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, #f77, #7f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>MIDL 2024</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://openreview.net/pdf?id=YUMVjxdIqn" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/midl24_a_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Left: Four pre-training strategies – 1) Supervised learning on natural images, 2) Self-supervised learning on natural images, 3) Supervised learning on medical images and 4) Self-supervised learning on medical images. Right: Supervised fine-tuning with pre-trained encoders on paired frontal and lateral chest X-rays.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          Chest X-ray analysis in medical imaging has largely focused on single-view methods. However, recent advancements have led to the development of multi-view approaches that
+harness the potential of multiple views for the same patient. Although these methods have
+shown improvements, it is especially difficult to collect large multi-view labeled datasets
+owing to the prohibitive annotation costs and acquisition times. Hence, it is crucial to
+address the multi-view setting in the low data regime. Pre-training is a critical component
+to ensure efficient performance in this low data regime, as evidenced by its improvements in
+natural and medical imaging. However, in the multi-view setup, such pre-training strategies have received relatively little attention and ImageNet initialization remains largely the
+norm. We bridge this research gap by conducting an extensive benchmarking study illustrating the efficacy of 10 strong supervised and self-supervised models pre-trained on both
+natural and medical images for multi-view chest X-ray classification. We further examine
+the performance in the low data regime by training these methods on 1%, 10%, and 100%
+fractions of the training set. Our best models yield significant improvements compared to
+existing state-of-the-art multi-view approaches, outperforming them by as much as 9.9%,
+8.8% and 1.6% on the 1%, 10%, and 100% data fractions respectively. We hope this benchmark will spur the development of stronger multi-view medical imaging models, similar to
+the role of such benchmarks in other computer vision and medical imaging domains. As
+open science, we make our code publicly available to aid in the development of stronger
+multi-view models.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/midl24_a_fig2.png" alt="Results 1" width="900" />
+        <h4 class="subtitle has-text-centered">Mean AUC of models fine-tuned on 1%, 10%, and 100% data fractions across 64 conditions compared: 5 models pre-trained on natural images and 4 on medical images versus a random baseline (Scratch). Pre-training methods outperform Scratch, especially in data-efficient settings (1% and 10% fractions).</h4>
+      </div>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/midl24_a_fig4.png" alt="Results 2" width="900" />
+        <h4 class="subtitle has-text-centered">Left: Comparison of best-performing models across four categories. Self-supervised pre-training on medical data outperforms all methods, significantly exceeding the random baseline, notably in low data scenarios. Right: Comparison with SOTA multi-view chest X-ray classification methods across three data fractions (for 64 conditions).</h4>
+      </div>
+
+      <div class="hero-body has-text-centered">
+        <img src="static/images/midl24_a_fig3.png" alt="Results 3" width="900" />
+        <h4 class="subtitle has-text-centered">Mean AUC (across 14 clinically relevant conditions) of models fine-tuned on 1%, 10% and 100% fractions of the multi-view labeled data. The pre-training methods consistently outperform the baseline, with the largest gains on the data-efficient settings.</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{afzal2024comprehensive,
+          title={A comprehensive benchmark of supervised and self-supervised pre-training on multi-view chest x-ray classification},
+          author={Afzal, Muhammad Muneeb and Khan, Muhammad Osama and Fang, Yi},
+          journal={Medical Imaging with Deep Learning},
+          volume={1},
+          year={2024},
+          publisher={PMLR}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

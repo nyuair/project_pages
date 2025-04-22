@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A Multi-Modal Foundation Model to Assist People with Blindness and Low Vision in Environmental Interaction">
+  <meta property="og:title" content="A Multi-Modal Foundation Model for pBLV" />
+  <meta property="og:description" content="Foundation vision-language model enhanced with prompt engineering to support visually impaired individuals in navigating dynamic environments." />
+  <meta property="og:url" content="https://yourusername.github.io/pBLV-Foundation-Model" />
+  <meta property="og:image" content="static/images/jimaging24_a_fig1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="Foundation Model for pBLV">
+  <meta name="twitter:description" content="Multi-modal vision-language model to enhance visual perception for visually impaired individuals.">
+  <meta name="twitter:image" content="static/images/jimaging24_a_fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="foundation model, assistive technology, visual impairment, prompt engineering, vision-language model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multi-Modal Foundation Model for pBLV</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">A Multi-Modal Foundation Model to Assist People with Blindness and Low Vision in Environmental Interaction</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Yu Hao<sup>1,†</sup>, Fan Yang<sup>1,†</sup>, Hao Huang<sup>1</sup>, Shuaihang Yuan<sup>1</sup>, Sundeep Rangan<sup>1</sup>, John-Ross Rizzo<sup>1,2</sup>, Yao Wang<sup>1</sup>, Yi Fang<sup>1,3*</sup>
+          </span><br>
+          <span class="author-block">
+            <sup>1</sup>New York University, <sup>2</sup>NYU Langone Health, <sup>3</sup>NYU Abu Dhabi
+          </span><br>
+          <small><sup>*</sup>Corresponding Author, <sup>†</sup>Equal Contribution</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, #f857a6, #ff5858); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>J. Imaging 2024</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11122237/pdf/jimaging-10-00103.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/jimaging24_a_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Multi-modal foundation model processes visual input and responds to user queries for scene understanding, object localization, and risk assessment.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          People with blindness and low vision (pBLV) encounter substantial challenges when
+it comes to comprehensive scene recognition and precise object identification in unfamiliar environments. Additionally, due to the vision loss, pBLV have difficulty in accessing and identifying
+potential tripping hazards independently. Previous assistive technologies for the visually impaired
+often struggle in real-world scenarios due to the need for constant training and lack of robustness,
+which limits their effectiveness, especially in dynamic and unfamiliar environments, where accurate
+and efficient perception is crucial. Therefore, we frame our research question in this paper as: How
+can we assist pBLV in recognizing scenes, identifying objects, and detecting potential tripping hazards in
+unfamiliar environments, where existing assistive technologies often falter due to their lack of robustness? We
+hypothesize that by leveraging large pretrained foundation models and prompt engineering, we can
+create a system that effectively addresses the challenges faced by pBLV in unfamiliar environments.
+Motivated by the prevalence of large pretrained foundation models, particularly in assistive robotics
+applications, due to their accurate perception and robust contextual understanding in real-world scenarios induced by extensive pretraining, we present a pioneering approach that leverages foundation
+models to enhance visual perception for pBLV, offering detailed and comprehensive descriptions
+of the surrounding environment and providing warnings about potential risks. Specifically, our
+method begins by leveraging a large-image tagging model (i.e., Recognize Anything Model (RAM))
+to identify all common objects present in the captured images. The recognition results and user
+query are then integrated into a prompt, tailored specifically for pBLV, using prompt engineering.
+By combining the prompt and input image, a vision-language foundation model (i.e., InstructBLIP)
+generates detailed and comprehensive descriptions of the environment and identifies potential risks
+in the environment by analyzing environmental objects and scenic landmarks, relevant to the prompt.
+We evaluate our approach through experiments conducted on both indoor and outdoor datasets.
+Our results demonstrate that our method can recognize objects accurately and provide insightful
+descriptions and analysis of the environment for pBLV.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Method</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/jimaging24_a_fig2.png" alt="Method" width="900" />
+        <h4 class="subtitle has-text-centered">The system includes an image tagging module, prompt engineering, and a vision-language module to answer questions posed by users.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/jimaging24_a_fig3.png" alt="Results 1" width="800" />
+        <h4 class="subtitle has-text-centered">Scene understanding, object localization, and risk assessment results using Visual7W dataset.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/jimaging24_a_fig4.png" alt="Results 2" width="800" />
+        <h4 class="subtitle has-text-centered">Ablation study showing effects of adding tagging and prompt engineering.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/jimaging24_a_fig5.png" alt="Results 3" width="900" />
+        <h4 class="subtitle has-text-centered">Real-world tests showing effectiveness of system in outdoor environments including subway navigation.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @article{hao2024multi,
+          title={A multi-modal foundation model to assist people with blindness and low vision in environmental interaction},
+          author={Hao, Yu and Yang, Fan and Huang, Hao and Yuan, Shuaihang and Rangan, Sundeep and Rizzo, John-Ross and Wang, Yao and Fang, Yi},
+          journal={Journal of Imaging},
+          volume={10},
+          number={5},
+          pages={103},
+          year={2024},
+          publisher={MDPI}
+        }
+</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

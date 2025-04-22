@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A Wearable Platform Based on the Multi-modal Foundation Model to Augment Spatial Cognition for People with Blindness and Low Vision">
+  <meta property="og:title" content="ChatMap: Enhancing Spatial Cognition for pBLV" />
+  <meta property="og:description" content="A wearable system that augments spatial cognition for the blind and low vision community using multi-modal foundation models." />
+  <meta property="og:url" content="https://haoyu6427.github.io/your-repo/" />
+  <meta property="og:image" content="static/images/chatmap_banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="ChatMap: Wearable Spatial Cognition Assistant">
+  <meta name="twitter:description" content="A novel wearable platform utilizing GPT-4V to aid spatial understanding for the visually impaired.">
+  <meta name="twitter:image" content="static/images/chatmap_twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="wearable AI, spatial cognition, vision-language model, assistive technology, GPT-4V">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ChatMap</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">ChatMap: A Wearable Platform to Augment Spatial Cognition for People with Blindness and Low Vision</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Yu Hao<sup>1</sup>, Alexey Magay<sup>1</sup>, Hao Huang<sup>1</sup>, Shuaihang Yuan<sup>1</sup>, Congcong Wen<sup>1</sup>, Yi Fang<sup>1*</sup>
+          </span>
+          <br>
+          <span class="author-block">
+            <sup>1</sup>Embodied AI and Robotics (AIR) Lab, NYU Tandon and NYU Abu Dhabi
+          </span>
+          <br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>IROS 2024</b></span>
+        </div>
+
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10801606" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">The overview of the proposed method.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          Spatial cognition refers to the ability to gain knowledge about their surroundings and utilize this information to identify their location, acquire resources, and navigate their way back to familiar places. People with blindness and low vision (pBLV) face significant challenges with spatial cognition due to the reliance on visual input. Without the full range of visual cues, pBLV individuals often find it difficult to grasp a comprehensive understanding of their environment, leading to obstacles in scene recognition and precise object localization, especially in unfamiliar environments. This limitation extends to their ability to independently detect and avoid potential tripping hazards, making navigation and interaction with their environment more challenging. In this paper, we present a pioneering  wearable platform tailored to enhance the spatial cognition of pBLV through the integration of multi-modal foundation model. The proposed platform integrates a wearable camera with audio module and leverages the advanced capabilities of vision language foundation model (i.e., GPT-4 and GPT-4V), for the nuanced processing of visual and textual data. Specifically, we employ vision language models to bridge the gap between visual information and the proprioception of visually impaired users, offering more intelligible guidance by aligning visual data with the natural perception of space and movement. Then we apply prompt engineering to guide the large language model to act as an assistant tailored specifically for pBLV users to produce accurate answers. Another innovation in our model is the incorporation of a chain of thought reasoning process, which enhances the accuracy and interpretability of the model, facilitating the generation of more precise responses to complex user inquiries across diverse environmental contexts. To assess the practical impact of our proposed wearable platform, we carried out a series of real-world experiments across three tasks that are commonly challenging for people with blindness and low vision: risk assessment, object localization, and scene recognition. Additionally, through an ablation study conducted on the VizWiz dataset, we rigorously assess the contribution of each individual module, substantiating the integral role in the model's overall performance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Pipeline</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros_fig2.2.png" alt="Pipeline" width="900" />
+        <h4 class="subtitle has-text-centered">The system pipeline integrating VLM, prompt engineering, and reasoning.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/iros_fig3.2.png" alt="Results" width="900" />
+        <h4 class="subtitle has-text-centered">Qualitative results showing ChatMap responses in real-world tasks.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTex</h2>
+      <pre><code>
+        @inproceedings{hao2024chatmap,
+          title={ChatMap: A Wearable Platform Based on the Multi-modal Foundation Model to Augment Spatial Cognition for People with Blindness and Low Vision},
+          author={Hao, Yu and Magay, Alexey and Huang, Hao and Yuan, Shuaihang and Wen, Congcong and Fang, Yi},
+          booktitle={2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+          pages={129--134},
+          year={2024},
+          organization={IEEE}
+        }       
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+

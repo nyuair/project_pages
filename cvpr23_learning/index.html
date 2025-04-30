@@ -3,372 +3,156 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta name="description" content="LP-DIF: Learning Local Pattern-Specific Deep Implicit Function for 3D Objects and Scenes">
+  <meta property="og:title" content="LP-DIF: Learning Local Pattern-Specific Deep Implicit Function for 3D Objects and Scenes" />
+  <meta property="og:description" content="A novel 3D shape representation method with pattern-specific decoders for more accurate reconstruction." />
+  <meta property="og:url" content="#" />
+  <meta property="og:image" content="static/images/cvpr23_learning_fig1.png" />
 
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:title" content="LP-DIF for 3D Shape Reconstruction">
+  <meta name="twitter:description" content="Pattern-clustered local decoders for highly detailed 3D reconstruction." />
+  <meta name="twitter:image" content="static/images/cvpr23_learning_fig1.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="3D reconstruction, LP-DIF, deep implicit function, shape learning, CVPR 2023">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>SDSeg</title>
+  <title>LP-DIF - CVPR 2023</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
 </head>
 
 <body>
-
-
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">
-              Title of the paper</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://lin-tianyu.github.io/" target="_blank">Tianyu Lin</a><sup>1*</sup></span>
-              <!-- <span class="author-block">
-                <a target="_blank">Zhiguang Chen</a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://github.com/zzzyzh" target="_blank">Zhonghao Yan</a><sup>3</sup>,</span>
-              <span class="author-block">
-                <a href="https://github.com/yuweijiang" target="_blank">Weijiang Yu</a><sup>2*</sup>,</span>
-              <span class="author-block">
-                <a target="_blank">Fudan Zheng</a><sup>2*</sup></span> -->
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <sup>1</sup>Institution<br>
-                <!-- {<sup>1</sup>School of Biomedical Engineering, 
-                <sup>2</sup>School of Computer Science and Engineering}, Sun Yat-sen University<br>
-                <sup>3</sup>International School, Beijing University of Posts and Telecommunications -->
-              </span>
-              <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span><br>
-              <span class="author-block" style="background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;"><b>Conference/Journal Name</b></span>
-            </div>
+      <div class="container has-text-centered">
+        <h1 class="title is-1">LP-DIF: Learning Local Pattern-Specific Deep Implicit Function for 3D Objects and Scenes</h1>
 
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">Meng Wang<sup>1</sup>, Yu-Shen Liu<sup>1*</sup>, Yue Gao<sup>1</sup>, Kanle Shi<sup>2</sup>, Yi Fang<sup>3</sup>, Zhizhong Han<sup>4</sup></span><br>
+          <span class="author-block">
+            <sup>1</sup>Tsinghua University<br>
+            <sup>2</sup>Kuaishou Technology<br>
+            <sup>3</sup>New York University Abu Dhabi<br>
+            <sup>4</sup>Wayne State University
+          </span><br>
+          <small><sup>*</sup>Corresponding Author</small><br>
+          <span class="author-block" style="background: linear-gradient(to right, #ff6600, #009933); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>CVPR 2023</b></span>
+        </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-            <!-- ArXiv abstract Link -->
-            <span class="link-block">
-              <a href="https://arxiv.org/abs/2406.18361" target="_blank"
-                class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="ai ai-arxiv"></i>
-                </span>
-                <span>ArXiv</span>
-              </a>
-            </span>
-
-              <!-- Arxiv PDF link -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2406.18361.pdf" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Arxiv Paper</span>
-                </a>
-              </span>
-
-                <!-- Github link -->
-                <span class="link-block">
-                  <a href="https://github.com/lin-tianyu/Stable-Diffusion-Seg" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-              </div>
-            </div>
-          </div>
+        <div class="buttons is-centered" style="margin-top: 1rem;">
+          <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_LP-DIF_Learning_Local_Pattern-Specific_Deep_Implicit_Function_for_3D_Objects_CVPR_2023_paper.pdf" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Teaser-->
-  <section class="hero teaser">
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <img src="static/images/framework-v2.jpg" alt="MY ALT TEXT" , width="700" />
-        <h4 class="subtitle has-text-centered">The overview of the proposed method.</h4>
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Overview</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cvpr23_learning_fig1.png" alt="Overview" width="900" />
+        <h4 class="subtitle has-text-centered">Compared with global DIF and local DIF, LP-DIF reconstructs shapes with finer details by using multiple decoders for clustered local regions.</h4>
       </div>
     </div>
   </section>
-  <!-- End teaser -->
 
-  <section class="section hero is-light">
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Highlights</h2>
-        </div>
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Abstract</h2>
+      <div class="content has-text-centered">
+        <p>
+          Deep Implicit Function (DIF) has gained much popularity as an efficient 3D shape representation. To capture
+geometry details, current mainstream methods divide 3D
+shapes into local regions and then learn each one with a
+local latent code via a decoder. Such local methods can
+capture more local details due to less diversity among local
+regions than global shapes. Although the diversity of local
+regions has been decreased compared to global approaches,
+the diversity in different local regions still poses a challenge
+in learning an implicit function when treating all regions
+equally using only a single decoder. What is worse, these
+local regions often exhibit imbalanced distributions, where
+certain regions have significantly fewer observations. This
+leads that fine geometry details could not be preserved well.
+To solve this problem, we propose a novel Local Patternspecific Implicit Function, named LP-DIF, to represent a
+shape with clusters of local regions and multiple decoders,
+where each decoder only focuses on one cluster of local regions which share a certain pattern. Specifically, we first
+extract local codes for all regions, and then cluster them
+into multiple groups in the latent space, where similar regions sharing a common pattern fall into one group. After
+that, we train multiple decoders for mining local patterns of
+different groups, which simplifies the learning of fine geometric details by reducing the diversity of local regions seen
+by each decoder. To further alleviate the data-imbalance
+problem, we introduce a region re-weighting module to
+each pattern-specific decoder using a kernel density estimator, which dynamically re-weights the regions during learning. Our LP-DIF can restore more geometry details, and
+thus improve the quality of 3D reconstruction. Experiments
+demonstrate that our method can achieve the state-of-theart performance over previous methods.
+        </p>
       </div>
-      <p>
-        🌟 Highlights are the summary of the proposed work. They can be contributions in the paper or preferred key points.<br>
-        🌟 Point 2
-        
-      </p>
     </div>
   </section>
 
-  <section class="section hero">
+  <section class="section has-background-light">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Motivation</h2>
-        <h5 class="title is-5" style="text-align: center;">
-          Using a single sentence to summarize the motivation of the paper.
-        </h5>
-
-        <div class="columns is-centered">
-        <!-- reenact. -->
-        <div class="column">
-          <div class="content">
-            <h4 class="title is-5" style="text-align: center;">🔒 Challenges</h4>
-            <p>
-            (1) blablabla<br>
-            (2) blablabla
-            </p>
-          </div>
-        </div>
-        <!--/ reenact -->
-        <!-- swap. -->
-        <div class="column">
-          <h4 class="title is-5" style="text-align: center;">🔑 Solutions</h4>
-          <div class="columns is-centered">
-            <div class="column content">
-              <p>
-              <!-- <br> -->
-            (1) blablabla<br>
-            (2) blablabla
-              </p>
-            </div>
-          </div>
-        </div>
-        <!--/ swap. -->
-      </div>
-
-            <div class="hero-body">
-              <img src="static/images/LatentRep.jpg" alt="MY ALT TEXT" , width="1000" />
-              <h4 class="subtitle has-text-centered"><b>Caption of the figure.</b></h4>
-              Detailed descriptions.
-            </div>
-        </div>
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Methods</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cvpr23_learning_fig2.png" alt="Method Figure" width="900" />
+        <h4 class="subtitle has-text-centered">Overview of LP-DIF: instead of using a single decoder for all local regions, LP-DIF assigns decoders to clusters of similar patterns, improving reconstruction accuracy and learning stability.</h4>
       </div>
     </div>
   </section>
 
-  <section class="section hero is-light">
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Module 1</h2>
-            <h5 class="title is-5" style="text-align: center;">
-              Single sentence to summarize the first module of the paper.
-            </h5>
-            <div class="hero-body">
-              <img src="static/images/ReverseCurve.png" alt="MY ALT TEXT" , width="900" />
-              <h4 class="subtitle has-text-centered"><b>Caption of the figure.</b></h4>
-            </div>
-            <!-- <div class="hero-body">
-              <img src="static/images/ReverseProcess.jpeg" alt="MY ALT TEXT" , width="1000" />
-              <h4 class="subtitle has-text-centered">Visualization of the predicted probability maps in
-                reverse process.</h4>
-            </div> -->
-        </div>
+      <h2 class="title is-2 has-text-centered" style="color: #6b6bff;">Results</h2>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cvpr23_learning_fig3.png" alt="Scene Comparison" width="900" />
+        <h4 class="subtitle has-text-centered">Surface reconstruction comparison on 3D scenes shows LP-DIF captures finer geometry and less missing regions than previous methods.</h4>
       </div>
-    </div>
-
-    <!-- Video carousel -->
-   <section class="hero is-small">
-   <div class="hero-body">
-     <div class="container">
-       <div id="results-carousel" class="carousel results-carousel">
-         <div class="item item1" style="text-align:center;">
-           <img src="static/images/ReverseProcess-1.png" alt="MY ALT TEXT" , width="700" />
-         </div>
-         <div class="item item2" style="text-align:center;">
-           <img src="static/images/ReverseProcess-2.png" alt="MY ALT TEXT" , width="700" />
-         </div>
-       </div>
-     </div>
-   </div>
-   <h4 class="subtitle has-text-centered"><b>Showing rolling images here.</b></h4>
- </section> 
-   <!-- End video carousel -->
-  </section>
-
-  <section class="section hero">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Module 2</h2>
-            <h5 class="title is-5" style="text-align: center;">
-            Single sentence to summarize the second module of the paper.
-            </h5>
-            <p style="text-align: left;">
-              <b>👉 Key point 1</b>: bnlablabla.<br>
-              <b>👉 Key point 2</b>: blablabla.
-
-            </p>
-            <div class="hero-body">
-              <img src="static/images/StabilityEvaluationV4.jpeg" alt="MY ALT TEXT" , width="1000" />
-              <h2 class="subtitle has-text-centered"><b>Caption of the figure.</b></h2>
-            </div>
-        </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cvpr23_learning_fig4.png" alt="Quantitative Evaluation" width="900" />
+        <h4 class="subtitle has-text-centered">LP-DIF achieves best performance in terms of Chamfer Distance and F-score on ShapeNet, outperforming previous DIF-based methods.</h4>
+      </div>
+      <div class="hero-body has-text-centered">
+        <img src="static/images/cvpr23_learning_fig5.png" alt="Shape Comparison" width="900" />
+        <h4 class="subtitle has-text-centered">Comparison of reconstruction quality among various methods. LP-DIF recovers better local details across different shape categories.</h4>
       </div>
     </div>
   </section>
 
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Other Qualitative Analysis</h2>
-            <div class="hero-body">
-              <img src="static/images/Conditioner.png" alt="MY ALT TEXT" , width="900" />
-              <h2 class="subtitle has-text-centered"><b>Caption of the figure.</b></h2>
-                  Detailed descriptions.
-            </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Video carousel -->
-  <!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>  -->
-  <!-- End video carousel -->
-
-
-
-
-
-
-  <!-- Paper poster -->
-  <!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550"></iframe>
-      </div>
-    </div>
-  </section> -->
-  <!--End paper poster -->
-
-
-  <!--BibTex citation -->
   <section class="section hero" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTex</h2>
+      <h2 class="title">BibTeX</h2>
       <pre><code>
-        @inproceedings{lin2024stable,
-          title={Stable Diffusion Segmentation for Biomedical Images with Single-step Reverse Process},
-          author={Lin, Tianyu and Chen, Zhiguang and Yan, Zhonghao and Yu, Weijiang and Zheng, Fudan},
-          booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-          year={2024},
-          organization={Springer}
-        }        
+        @inproceedings{wang2023lpdif,
+          title={LP-DIF: Learning Local Pattern-Specific Deep Implicit Function for 3D Objects and Scenes},
+          author={Wang, Meng and Liu, Yu-Shen and Gao, Yue and Shi, Kanle and Fang, Yi and Han, Zhizhong},
+          booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+          pages={21856--21865},
+          year={2023}
+        }
       </code></pre>
     </div>
   </section>
-  <!--End BibTex citation -->
-
 
   <footer class="footer">
     <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              
-              <br> This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-
-          </div>
-        </div>
+      <div class="content has-text-centered">
+        <p>
+          Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+          Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+        </p>
       </div>
     </div>
   </footer>
 
-  <!-- Statcounter tracking code -->
-
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-  <!-- End of Statcounter Code -->
-
 </body>
-
 </html>

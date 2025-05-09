@@ -28,36 +28,45 @@
     <div class="container content">
       <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Project Summary</h2>
       <p>
-        The Embodied RobAI project pushes the frontier of Embodied Artificial Intelligence—developing general-purpose robots through Vision-Language Actions (VLA) that unite perception, language, and control. By embedding intelligence into robots that perceive, interpret, and act in the real world, the project aims to build lifelike agents capable of real-time, goal-directed behavior.
+        The Embodied RobAI project is a bold initiative to push the frontier of Embodied Artificial Intelligence (Embodied AI)—where robots not only process data but live and act in the physical world through sensors, perception, and motor control. At the heart of this project is the development of Vision-Language Actions (VLA), a powerful paradigm that connects visual understanding, natural language comprehension, and robotic execution into a unified, intelligent system.
+      </p>
+      <p>
+        Unlike traditional AI models, which operate in abstract digital environments, Embodied RobAI builds physically grounded intelligence: robots that see like humans, understand like humans, and act in the world like humans. These systems can manipulate objects, navigate dynamic environments, and follow human instructions seamlessly, achieving true interactive autonomy.
       </p>
 
       <h3 class="title is-3">Why Embodied AI?</h3>
       <p>
-        Embodied AI integrates sensors, cognition, and motion into a feedback loop, enabling robots to learn from physical interaction. This fosters commonsense reasoning, spatial awareness, and adaptive autonomy beyond what virtual agents can achieve.
+        Embodied AI represents the future of intelligent systems. It merges perception, cognition, and action within a real-world feedback loop. Through embodiment, AI agents learn by doing—developing spatial, physical, and commonsense reasoning that purely digital agents cannot achieve. The Embodied RobAI project emphasizes this principle by embedding intelligence into robotic bodies, enabling situational awareness, goal-oriented behavior, and real-time decision-making in the wild.
       </p>
 
       <h3 class="title is-3">Core Objectives</h3>
       <ul>
-        <li><strong>Unifying VLA and Embodied AI:</strong> Build agents that see, understand, and act.</li>
-        <li><strong>Learning from Interaction:</strong> Acquire new skills through visual-linguistic demonstration.</li>
-        <li><strong>Scalable Generalization:</strong> Generalize to new tasks and scenes from foundation models.</li>
-        <li><strong>Grounded Instruction Following:</strong> React contextually to spoken commands and surroundings.</li>
+        <li><strong>Unifying VLA and Embodied AI:</strong> Harness Vision-Language Actions to tightly couple perception, language, and control within robotic platforms for lifelike understanding and reactivity.</li>
+        <li><strong>Learning from Interaction:</strong> Enable embodied agents to learn directly from visual-linguistic interactions, acquiring new skills without the need for explicit programming or rigid rule-based systems.</li>
+        <li><strong>Scalable Generalization:</strong> Build systems that generalize across tasks, environments, and object types using pretrained VLA models adapted through embodied experiences.</li>
+        <li><strong>Grounded Instruction Following:</strong> Equip robots to understand and execute natural language commands grounded in what they currently see and where they are—supporting interactive, context-aware task execution.</li>
       </ul>
 
       <h3 class="title is-3">System Architecture</h3>
       <ul>
-        <li><strong>Embodied Visual Perception:</strong> First-person vision for egocentric scene understanding.</li>
-        <li><strong>Language-Guided Decision Making:</strong> VLMs guide task interpretation and planning.</li>
-        <li><strong>Action Controller:</strong> Executes motion via policy networks trained from VLA demonstrations.</li>
-        <li><strong>Embodied Memory Module:</strong> Maintains environmental and task state across time.</li>
+        <li><strong>Embodied Visual Perception:</strong> Real-time processing of first-person (egocentric) camera input for scene and object recognition.</li>
+        <li><strong>Language-Guided Decision Making:</strong> Use of foundation language models aligned with visual context to interpret and plan.</li>
+        <li><strong>Action Controller:</strong> Direct actuation of robotic limbs and locomotion systems using policy modules trained via VLA-based reinforcement learning or imitation learning.</li>
+        <li><strong>Embodied Memory Module:</strong> Spatial and temporal memory supporting persistent awareness of task context and environmental changes.</li>
       </ul>
 
-      <h3 class="title is-3">Use Cases</h3>
+      <h3 class="title is-3">Key Applications</h3>
       <ul>
-        <li>Assistive Robots for BVI and elderly</li>
-        <li>Home service and educational robots</li>
-        <li>Warehouse logistics automation</li>
+        <li>Assistive Embodied Agents: Robotic companions for blind, elderly, or mobility-impaired individuals.</li>
+        <li>Home and Service Robotics: Cleaning, fetching, organizing, and real-time help based on voice commands.</li>
+        <li>Interactive Learning Robots: Educational tools that demonstrate Embodied AI in action through real-world exploration and interaction.</li>
+        <li>Industrial Adaptation: Flexible task-performing agents in logistics and warehouse settings.</li>
       </ul>
+
+      <h3 class="title is-3">Long-Term Vision</h3>
+      <p>
+        The Embodied RobAI project envisions a future in which robots possess truly embodied intelligence—intelligence that is physical, interactive, and adaptable. By integrating Vision-Language Actions as the bridge between perception and execution, we are building the foundation for general-purpose robots that do more than think—they see, understand, and act. This is not just robotics. This is Embodied AI, brought to life.
+      </p>
     </div>
   </section>
 
@@ -67,56 +76,19 @@
 
       <div class="content has-text-centered">
         <h3 class="title is-4">Robotic Arm</h3>
-        <video id="roboticArmVideo" width="800" controls>
-          <source src="videos/robotic_arm_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="buttons is-centered mt-2">
-          <button onclick="switchVideo('roboticArmVideo', 'videos/humanoid_combined.mp4')" class="button is-info is-small">Video 1</button>
-          <button onclick="switchVideo('roboticArmVideo', 'videos/OneCameraFinalVideo-1 (1).mp4')" class="button is-info is-small">Video 2</button>
-        </div>
+        <iframe id="roboticArmVideo" width="800" height="450" src="https://drive.google.com/file/d/YOUR_FILE_ID_1/preview" allow="autoplay" allowfullscreen></iframe>
 
         <h3 class="title is-4 mt-6">Humanoid Robot</h3>
-        <video id="humanoidVideo" width="800" controls>
-          <source src="videos/humanoid_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="buttons is-centered mt-2">
-          <button onclick="switchVideo('humanoidVideo', 'humanoid_1.mp4')" class="button is-info is-small">Video 1</button>
-          <button onclick="switchVideo('humanoidVideo', 'humanoid_2.mp4')" class="button is-info is-small">Video 2</button>
-        </div>
+        <iframe id="humanoidVideo" width="800" height="450" src="https://drive.google.com/file/d/YOUR_FILE_ID_2/preview" allow="autoplay" allowfullscreen></iframe>
 
         <h3 class="title is-4 mt-6">Autonomous Car</h3>
-        <video id="carVideo" width="800" controls>
-          <source src="videos/car_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="buttons is-centered mt-2">
-          <button onclick="switchVideo('carVideo', 'car_1.mp4')" class="button is-info is-small">Video 1</button>
-          <button onclick="switchVideo('carVideo', 'car_2.mp4')" class="button is-info is-small">Video 2</button>
-        </div>
+        <iframe id="carVideo" width="800" height="450" src="https://drive.google.com/file/d/YOUR_FILE_ID_3/preview" allow="autoplay" allowfullscreen></iframe>
 
         <h3 class="title is-4 mt-6">Quadruped Robot</h3>
-        <video id="quandraVideo" width="800" controls>
-          <source src="videos/quandra_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="buttons is-centered mt-2">
-          <button onclick="switchVideo('quandraVideo', 'quandra_1.mp4')" class="button is-info is-small">Video 1</button>
-          <button onclick="switchVideo('quandraVideo', 'quandra_2.mp4')" class="button is-info is-small">Video 2</button>
-        </div>
+        <iframe id="quandraVideo" width="800" height="450" src="https://drive.google.com/file/d/YOUR_FILE_ID_4/preview" allow="autoplay" allowfullscreen></iframe>
       </div>
     </div>
   </section>
-
-  <script>
-    function switchVideo(videoId, filename) {
-      const video = document.getElementById(videoId);
-      video.src = `videos/${filename}`;
-      video.load();
-      video.play();
-    }
-  </script>
 
   <footer class="footer">
     <div class="content has-text-centered">

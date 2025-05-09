@@ -1,73 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Embodied RobAI Project</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
-    h1, h2, h3 { color: #2a2a2a; }
-    .video-section { margin: 2em 0; background: white; padding: 1em; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .buttons { margin-bottom: 1em; }
-    .buttons button { margin-right: 10px; padding: 0.5em 1em; border: none; border-radius: 5px; cursor: pointer; background: #007bff; color: white; }
-    .buttons button:hover { background: #0056b3; }
-    video { width: 100%; height: auto; border-radius: 5px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="description" content="Embodied RobAI: Advancing Embodied AI through Vision-Language Actions for General-Purpose Robots.">
+  <meta property="og:title" content="Embodied RobAI" />
+  <meta property="og:description" content="Unified Vision-Language and Action Intelligence for Robotic Autonomy." />
+  <meta property="og:url" content="https://yourusername.github.io/embodied-robai/" />
+  <meta property="og:image" content="static/images/embodied_robot.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embodied RobAI</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 </head>
+
 <body>
-  <h1>Embodied RobAI: Advancing Embodied AI through Vision-Language Actions</h1>
-  <p>The Embodied RobAI project is a bold initiative to push the frontier of Embodied AI where robots act in the physical world via sensors, perception, and motor control. This project develops Vision-Language Actions (VLA) to unify visual understanding, language, and robotics.</p>
-
-  <h2>System Architecture</h2>
-  <ul>
-    <li><strong>Embodied Visual Perception:</strong> Real-time processing of egocentric input</li>
-    <li><strong>Language-Guided Decision Making:</strong> Foundation models interpret and plan</li>
-    <li><strong>Action Controller:</strong> Actuation trained via reinforcement/imitation learning</li>
-    <li><strong>Embodied Memory Module:</strong> Temporal-spatial awareness</li>
-  </ul>
-
-  <h2>Application Categories</h2>
-  <div class="video-section">
-    <h3>Robotic Arm</h3>
-    <div class="buttons">
-      <button onclick="changeVideo('robotic-arm', 'robotic_arm_1.mp4')">Video 1</button>
-      <button onclick="changeVideo('robotic-arm', 'robotic_arm_2.mp4')">Video 2</button>
+  <section class="hero">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1">Embodied RobAI: Advancing Embodied AI through Vision-Language Actions</h1>
+      <h2 class="subtitle is-4">Yu Hao, Yi Fang, and NYU AIR Lab</h2>
+      <p>New York University, NYU Abu Dhabi</p>
+      <span class="author-block" style="background: linear-gradient(to right, orange, green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>Ongoing Project</b></span>
     </div>
-    <video id="robotic-arm" controls src="videos/robotic_arm_1.mp4"></video>
-  </div>
+  </section>
 
-  <div class="video-section">
-    <h3>Humanoid</h3>
-    <div class="buttons">
-      <button onclick="changeVideo('humanoid', 'humanoid_1.mp4')">Video 1</button>
-      <button onclick="changeVideo('humanoid', 'humanoid_2.mp4')">Video 2</button>
-    </div>
-    <video id="humanoid" controls src="videos/humanoid_1.mp4"></video>
-  </div>
+  <section class="section">
+    <div class="container content">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Project Summary</h2>
+      <p>
+        The Embodied RobAI project pushes the frontier of Embodied Artificial Intelligence—developing general-purpose robots through Vision-Language Actions (VLA) that unite perception, language, and control. By embedding intelligence into robots that perceive, interpret, and act in the real world, the project aims to build lifelike agents capable of real-time, goal-directed behavior.
+      </p>
 
-  <div class="video-section">
-    <h3>Car</h3>
-    <div class="buttons">
-      <button onclick="changeVideo('car', 'car_1.mp4')">Video 1</button>
-      <button onclick="changeVideo('car', 'car_2.mp4')">Video 2</button>
-    </div>
-    <video id="car" controls src="videos/car_1.mp4"></video>
-  </div>
+      <h3 class="title is-3">Why Embodied AI?</h3>
+      <p>
+        Embodied AI integrates sensors, cognition, and motion into a feedback loop, enabling robots to learn from physical interaction. This fosters commonsense reasoning, spatial awareness, and adaptive autonomy beyond what virtual agents can achieve.
+      </p>
 
-  <div class="video-section">
-    <h3>Quadruped Robot</h3>
-    <div class="buttons">
-      <button onclick="changeVideo('quadruped', 'quandra_1.mp4')">Video 1</button>
-      <button onclick="changeVideo('quadruped', 'quandra_2.mp4')">Video 2</button>
+      <h3 class="title is-3">Core Objectives</h3>
+      <ul>
+        <li><strong>Unifying VLA and Embodied AI:</strong> Build agents that see, understand, and act.</li>
+        <li><strong>Learning from Interaction:</strong> Acquire new skills through visual-linguistic demonstration.</li>
+        <li><strong>Scalable Generalization:</strong> Generalize to new tasks and scenes from foundation models.</li>
+        <li><strong>Grounded Instruction Following:</strong> React contextually to spoken commands and surroundings.</li>
+      </ul>
+
+      <h3 class="title is-3">System Architecture</h3>
+      <ul>
+        <li><strong>Embodied Visual Perception:</strong> First-person vision for egocentric scene understanding.</li>
+        <li><strong>Language-Guided Decision Making:</strong> VLMs guide task interpretation and planning.</li>
+        <li><strong>Action Controller:</strong> Executes motion via policy networks trained from VLA demonstrations.</li>
+        <li><strong>Embodied Memory Module:</strong> Maintains environmental and task state across time.</li>
+      </ul>
+
+      <h3 class="title is-3">Use Cases</h3>
+      <ul>
+        <li>Assistive Robots for BVI and elderly</li>
+        <li>Home service and educational robots</li>
+        <li>Warehouse logistics automation</li>
+      </ul>
     </div>
-    <video id="quadruped" controls src="videos/quandra_1.mp4"></video>
-  </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container">
+      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Video Showcase</h2>
+
+      <div class="content has-text-centered">
+        <h3 class="title is-4">Robotic Arm</h3>
+        <video id="roboticArmVideo" width="800" controls>
+          <source src="videos/robotic_arm_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="buttons is-centered mt-2">
+          <button onclick="switchVideo('roboticArmVideo', 'robotic_arm_1.mp4')" class="button is-info is-small">Video 1</button>
+          <button onclick="switchVideo('roboticArmVideo', 'robotic_arm_2.mp4')" class="button is-info is-small">Video 2</button>
+        </div>
+
+        <h3 class="title is-4 mt-6">Humanoid Robot</h3>
+        <video id="humanoidVideo" width="800" controls>
+          <source src="videos/humanoid_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="buttons is-centered mt-2">
+          <button onclick="switchVideo('humanoidVideo', 'humanoid_1.mp4')" class="button is-info is-small">Video 1</button>
+          <button onclick="switchVideo('humanoidVideo', 'humanoid_2.mp4')" class="button is-info is-small">Video 2</button>
+        </div>
+
+        <h3 class="title is-4 mt-6">Autonomous Car</h3>
+        <video id="carVideo" width="800" controls>
+          <source src="videos/car_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="buttons is-centered mt-2">
+          <button onclick="switchVideo('carVideo', 'car_1.mp4')" class="button is-info is-small">Video 1</button>
+          <button onclick="switchVideo('carVideo', 'car_2.mp4')" class="button is-info is-small">Video 2</button>
+        </div>
+
+        <h3 class="title is-4 mt-6">Quadruped Robot</h3>
+        <video id="quandraVideo" width="800" controls>
+          <source src="videos/quandra_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="buttons is-centered mt-2">
+          <button onclick="switchVideo('quandraVideo', 'quandra_1.mp4')" class="button is-info is-small">Video 1</button>
+          <button onclick="switchVideo('quandraVideo', 'quandra_2.mp4')" class="button is-info is-small">Video 2</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
-    function changeVideo(id, src) {
-      document.getElementById(id).src = `videos/${src}`;
-      document.getElementById(id).play();
+    function switchVideo(videoId, filename) {
+      const video = document.getElementById(videoId);
+      video.src = `videos/${filename}`;
+      video.load();
+      video.play();
     }
   </script>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Built with ❤️ using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+        Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
 </body>
+
 </html>

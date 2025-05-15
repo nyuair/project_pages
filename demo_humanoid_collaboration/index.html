@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Humanoid Collaboration for Cooperative Tasks">
-  <meta property="og:title" content="Humanoid Collaboration" />
-  <meta property="og:description" content="Multi-agent collaboration using humanoid robots for joint manipulation tasks." />
-  <meta property="og:url" content="https://yourusername.github.io/humanoid-collaboration/" />
+  <meta name="description" content="H²-COMPACT: Human–Humanoid Co-Manipulation via Adaptive Contact Trajectories">
+  <meta property="og:title" content="H²-COMPACT: Human–Humanoid Co-Manipulation" />
+  <meta property="og:description" content="Adaptive and collaborative trajectory planning between humans and humanoid robots." />
+  <meta property="og:url" content="https://yourusername.github.io/h2-compact/" />
+  <meta property="og:image" content="static/images/h2compact_overview.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Humanoid Collaboration</title>
+  <title>H²-COMPACT: Human–Humanoid Collaboration</title>
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 </head>
@@ -16,9 +17,9 @@
 <body>
   <section class="hero">
     <div class="hero-body has-text-centered">
-      <h1 class="title is-1">Humanoid Collaboration for Cooperative Manipulation</h1>
+      <h1 class="title is-1">H²-COMPACT: Human–Humanoid Co-Manipulation</h1>
       <h2 class="subtitle is-4">NYU AIR Lab</h2>
-      <p>New York University, NYU Abu Dhabi</p>
+      <p>New York University Abu Dhabi</p>
     </div>
   </section>
 
@@ -26,33 +27,43 @@
     <div class="container content">
       <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Overview</h2>
       <p>
-        This project explores collaborative task execution using multiple humanoid robots working in unison. The system is designed for dynamic role allocation, shared decision-making, and synchronized control during joint manipulation of large or complex objects.
+        <strong>H²-COMPACT</strong> (Human–Humanoid Co-Manipulation via Adaptive Contact Trajectories) is a collaborative manipulation framework designed to enable humanoid robots to work physically alongside humans in shared object handling tasks. The system focuses on real-time adaptive trajectory generation for humanoid arms and body, synchronized with human movements.
       </p>
+      <p>
+        Through multi-modal sensor fusion (including vision, force, and proprioception) and reinforcement-based trajectory optimization, the humanoid agent learns to anticipate and adapt to human intention—allowing for smooth, efficient, and safe object transportation or assembly tasks. H²-COMPACT opens up new possibilities for human-robot teaming in logistics, assistive care, and manufacturing.
+      </p>
+
+      <h3 class="title is-3">Key Features</h3>
       <ul>
-        <li><strong>Collaborative Task Planning:</strong> Robots communicate and coordinate to achieve shared goals.</li>
-        <li><strong>Multi-Agent Synchronization:</strong> Precise timing and motion synchronization for safe and efficient collaboration.</li>
-        <li><strong>Shared Environment Awareness:</strong> Each humanoid adapts to the movements and force feedback of its partners.</li>
+        <li><strong>Adaptive Trajectory Generation:</strong> Contact-aware control for robust human–robot synchronization.</li>
+        <li><strong>Real-Time Intention Prediction:</strong> Predicts human intent from body motion and force signals.</li>
+        <li><strong>Force-Sensitive Planning:</strong> Incorporates feedback to modulate humanoid contact forces.</li>
+        <li><strong>Application Agnostic:</strong> Applicable to load lifting, co-carrying, and assistive support.</li>
       </ul>
     </div>
   </section>
 
   <section class="section has-background-light">
-    <div class="container">
-      <h2 class="title is-2 has-text-centered" style="color:#6b6bff;">Demo Videos</h2>
+    <div class="container has-text-centered">
+      <h2 class="title is-2" style="color:#6b6bff;">Demo Videos</h2>
 
-      <div class="content has-text-centered">
-        <h3 class="title is-4">Demo 1</h3>
-        <iframe width="800" height="450"
-          src="https://www.youtube.com/embed/UPfEuWncBr8?autoplay=1&mute=1"
-          frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h3 class="title is-4 mt-6">Co-Manipulation with Human</h3>
+      <iframe width="800" height="450"
+        src="https://www.youtube.com/embed/MmyeTua8Swo?autoplay=1&mute=1"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-        <h3 class="title is-4 mt-5">Demo 2</h3>
-        <iframe width="800" height="450"
-          src="https://www.youtube.com/embed/REPLACE_VIDEO_ID_2?autoplay=1&mute=1"
-          frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div>
+
     </div>
   </section>
 
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Built with ❤️ using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+        Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
 </body>
+
 </html>
